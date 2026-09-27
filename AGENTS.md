@@ -22,10 +22,16 @@ Se trata de un proyecto para una empresa / tienda de alimentación (de gildas, a
 
 
 ## Reglas
-- Para hacer commits de git, utiliza el inglés, no añadas co-autor, y usa estilo convencional en imperativo (Add ... Update ...)
+- Para hacer commits de git, utiliza el inglés, no añadas co-autor, y usa estilo convencional 
 - Siempre que te haga una corrección o aprendas una nueva lección, añádelo a este archivo (AGENTS.md) para no volver a olvidarlo
 
 ## Principios fundamentales
 - Simplicidad primero: Haz todos los cambios lo más simples posible. Minimiza su impacto en el código
 - No vagueza: Busca la causa raíz de los problemas. No arreglos temporales. Manten nivel y estándar de Principal Engineer 
 - Impacto mínimo: Los cambios deben tocar solo lo que es necesario. Evita introducir regresiones.
+## Decisiones de implementación
+- Utilizar Tailwind CSS para los estilos; definir los tokens de marca en el tema y mantener el CSS global mínimo.
+- Organizar el código por responsabilidades: rutas en `app`, componentes compartidos en `components`, funcionalidades en `features` y contenido tipado en `data`.
+- La primera versión incluye portada, Carta, Conócenos y Reserva. Reserva significa pedidos para recoger en tienda.
+- Se autoriza una carta ficticia de ejemplo con dos gildas, dos aceitunas y un vermú. Identificarla como provisional; no inventar dirección, contacto, horarios ni historia de las fundadoras.
+- Hasta conectar el envío de pedidos, el formulario solo prepara un resumen y nunca confirma una reserva real.
