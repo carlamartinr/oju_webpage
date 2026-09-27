@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { ProductIllustration } from "@/components/illustrations/product-illustration";
 import { useEffect, useRef, useState } from "react";
 import type { FormEvent } from "react";
 import { products } from "@/data/products";
@@ -72,12 +72,10 @@ export function PickupForm() {
                 key={product.id}
                 className="flex items-center gap-4 border-b border-olive/20 py-4"
               >
-                <Image
-                  src={product.image}
-                  alt=""
-                  width={72}
-                  height={72}
-                  className="size-16 object-contain"
+                <ProductIllustration
+                  product={product}
+                  decorative
+                  className="size-16 shrink-0"
                 />
                 <div className="min-w-0 flex-1">
                   <label htmlFor={product.id} className="font-display text-sm">

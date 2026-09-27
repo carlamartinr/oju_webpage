@@ -5,7 +5,6 @@ export type Product = {
   category: Category;
   note: string;
   ingredients: string;
-  image: string;
   unit: string;
 };
 
@@ -17,7 +16,6 @@ export const products: Product[] = [
     category: "gildas",
     note: "La de siempre. Por algo será.",
     ingredients: "Aceituna manzanilla, anchoa, piparra y aceite de oliva.",
-    image: "/images/products/gilda-clasica.png",
     unit: "unidad",
   },
   {
@@ -26,7 +24,6 @@ export const products: Product[] = [
     category: "gildas",
     note: "Un poquito de alegría.",
     ingredients: "Aceituna verde, boquerón, pimiento rojo y piparra.",
-    image: "/images/products/gilda-boqueron.png",
     unit: "unidad",
   },
   {
@@ -35,7 +32,6 @@ export const products: Product[] = [
     category: "aceitunas",
     note: "Frescas, como una buena charla.",
     ingredients: "Aceitunas manzanilla, limón, tomillo y aceite de oliva.",
-    image: "/images/products/aceitunas-limon.png",
     unit: "tarro de ejemplo",
   },
   {
@@ -45,7 +41,6 @@ export const products: Product[] = [
     note: "Para empezar y no parar.",
     ingredients:
       "Aceitunas partidas, pimiento rojo, ajo, tomillo y aceite de oliva.",
-    image: "/images/products/aceitunas-alino.png",
     unit: "tarro de ejemplo",
   },
   {
@@ -55,7 +50,6 @@ export const products: Product[] = [
     note: "El compañero del aperitivo.",
     ingredients:
       "Vermú rojo. Sugerencia de servicio: hielo, naranja y aceituna.",
-    image: "/images/products/vermu.png",
     unit: "botella de ejemplo",
   },
 ];

@@ -1,14 +1,14 @@
 "use client";
 
-import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { Gilda } from "@/components/illustrations/gilda";
+import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ButtonLink } from "@/components/ui/button-link";
 import { ArrowIcon, Sun, Wave } from "@/components/ui/icons";
 
 export function Hero() {
   const root = useRef<HTMLElement>(null);
-  useEffect(() => {
+  useLayoutEffect(() => {
     const media = gsap.matchMedia();
     media.add(
       "(prefers-reduced-motion: no-preference)",
@@ -20,13 +20,25 @@ export function Hero() {
           stagger: 0.12,
           ease: "power2.out",
         });
-        gsap.from("[data-hero-product]", {
-          y: 35,
-          rotation: -6,
+        const assembly = gsap.timeline({ defaults: { ease: "power3.out" } });
+        assembly.from("[data-skewer]", {
+          scaleY: 0,
           opacity: 0,
-          duration: 1.2,
-          ease: "power2.out",
+          transformOrigin: "50% 100%",
+          duration: 0.65,
         });
+        assembly.from(
+          "[data-ingredient]",
+          {
+            y: -160,
+            opacity: 0,
+            rotation: -9,
+            transformOrigin: "50% 50%",
+            duration: 0.85,
+            stagger: 0.24,
+          },
+          0.38,
+        );
       },
       root,
     );
@@ -76,16 +88,7 @@ export function Hero() {
             aria-hidden="true"
             className="absolute inset-[15%] rounded-full border border-olive/10"
           />
-          <Image
-            data-hero-product
-            src="/images/products/gilda-clasica.png"
-            alt="Ilustración de una gilda con aceitunas, anchoa y piparras"
-            width={900}
-            height={900}
-            sizes="(max-width: 767px) 90vw, 48vw"
-            preload
-            className="relative z-10 h-auto w-full p-3 drop-shadow-[0_25px_20px_rgba(21,45,11,0.12)] md:p-0"
-          />
+          <Gilda className="relative z-10 h-auto w-full" />
           <div className="absolute bottom-0 right-0 z-10 flex size-25 rotate-10 flex-col items-center justify-center rounded-full bg-sea text-albariza sm:bottom-4 sm:size-30">
             <Sun className="mb-1 size-8" />
             <span className="text-center text-[9px] font-semibold uppercase tracking-[0.13em]">
