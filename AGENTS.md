@@ -37,7 +37,18 @@ Se trata de un proyecto para una empresa / tienda de alimentación (de gildas, a
 - Hasta conectar el envío de pedidos, el formulario solo prepara un resumen y nunca confirma una reserva real.
 
 ## Correcciones de diseño
-- Los productos deben ser ilustraciones de trazos orgánicos, colores planos y brillos pintados, similares a la referencia del usuario; evitar el acabado fotorealista o 3D realista.
+- Los productos son ilustraciones editoriales semirrealistas: volumen con degradados suaves, brillos especulares, sombras de contacto y texturas sutiles. Evitar tanto el acabado plano/caricaturesco como el fotorrealismo o 3D.
+- Cada producto debe distinguirse por rasgos reales, no solo por un detalle pequeño: tipo de aceituna (manzanilla entera frente a partida), recipiente (cuenco vidriado frente a cazuela de barro), pescado (anchoa curada frente a boquerón blanco) y acompañamientos.
+- Los degradados SVG usan ids únicos (`useSvgIds`), porque las ilustraciones se repiten en la misma página.
+- Los componentes de ingrediente deben ser autónomos (`fill="none"` en su grupo raíz): no pueden depender de atributos heredados del SVG que los contiene.
+- El movimiento de portada es sutil y centralizado en `HomeMotion` (GSAP + ScrollTrigger, dentro de `matchMedia` de movimiento reducido): revelados únicos y nada en bucle.
+- No usar mosaicos ni cenefas de azulejos en la portada; el encanto se aporta con animación y con el bodegón del hero.
+- Hero: plato visto desde arriba, detrás de la gilda, y la gilda apoyada en él (sombra de contacto), no flotando. Sin aceite.
+- Hojas de olivo como estampado tono sobre tono (estilo del packaging), repartidas por el espacio y nunca sobre el plato. Los recortes solo por los laterales de pantalla.
+- No poner ingredientes decorativos en el bloque «Menos prisa. Más aperitivo.». No numerar pasos ni títulos («01», «02»).
+- En el carrusel, los nombres de producto van centrados.
+- Si una sombra duplica los elementos animados, sincronizar el `stagger` por índice dentro de cada copia.
+- En GSAP, `immediateRender: false` de un `fromTo` va en el objeto de destino (segundo); si no, el estado inicial se pinta desde el principio. Verificar las animaciones con fotogramas en tiempo real (CDP), porque el headless con tiempo virtual no avanza GSAP.
 - Usar componentes SVG reutilizables por ingrediente para montar la gilda del hero con GSAP: primero el palillo y después los ingredientes. Mantener el resultado completo con movimiento reducido.
 - El carrusel es una cinta continua e infinita, a velocidad constante, sin paradas entre productos, sin pausa al hover y sin botones de pausa/activación ni flechas. Con movimiento reducido debe poder recorrerse estáticamente.
 - No usar tarjetas blancas ni paneles claros detrás de los productos; las ilustraciones se presentan directamente sobre el fondo de la página.

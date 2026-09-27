@@ -58,3 +58,21 @@ El diseño de los productos como gildas o aceitunas será animado, no serán fot
 - Hero sin enlace a Carta ni sello circular «Mucho sur. Mucho sabor.».
 - Contacto verde (#152D0B), texto albariza y encabezado directo «Contacta con nosotros».
 - Los soles se sustituyen por el motivo de aceitunas original del logo, mostrado mediante una máscara SVG del PNG existente para conservar su silueta.
+
+## Revisión de realismo · septiembre 2026
+- Las ilustraciones pasan a un estilo editorial semirrealista: luz desde arriba a la izquierda, degradados de volumen, brillos especulares, sombras de contacto suaves y texturas discretas (lenticelas de la aceituna, pliegues de la piparra). Sin fotorrealismo ni 3D.
+- Diferenciación por producto:
+  - La clásica: anchoa curada de tono marrón rojizo.
+  - La salerosa: boquerón blanco con piel plateada y tira de pimiento asado.
+  - Al limón: aceitunas manzanilla enteras y verde claro, rodajas de limón, piel y tomillo, en cuenco vidriado claro con banda azul de marca.
+  - Aliño del sur: aceitunas partidas de tono caqui con la grieta visible, pimiento rojo, ajo y tomillo, en cazuela de barro.
+  - Vermú: vaso con reflejos, hielo translúcido, rodaja de naranja y aceituna en palillo.
+
+## Portada con más carácter · septiembre 2026
+- Hero como bodegón cenital: plato de loza crema con filete azul de marca detrás de la gilda (`components/illustrations/serving-plate.tsx`). La gilda está apoyada, no flota: una copia de su silueta, oscurecida y desenfocada, hace de sombra de contacto y se monta a la vez. Sin aceite ni vaivén.
+- Estampado de olivo tono sobre tono (`components/illustrations/olive-branch.tsx`), inspirado en el packaging: hojas planas grandes, unas rellenas y otras en línea, con nervios y alguna aceituna, en verde oliva al 7 % sobre albariza. Ramas repartidas por el espacio libre del hero, nunca sobre el plato, y cortadas solo por los laterales de la pantalla (nunca contra el header ni contra la sección siguiente). Aparecen con un fundido suave.
+- Bloque «Menos prisa. Más aperitivo.» sin ingredientes decorativos.
+- Carrusel: nombres de producto centrados bajo la ilustración.
+- Reserva: títulos de los pasos del formulario sin numeración.
+- Titulares de secciones inferiores aparecen con un leve desplazamiento vertical al hacer scroll (una sola vez). Con movimiento reducido todo queda estático y visible.
+- Descartado: zócalo de azulejos, ingredientes flotantes, gota y charco de aceite, ramitas realistas junto al plato.
