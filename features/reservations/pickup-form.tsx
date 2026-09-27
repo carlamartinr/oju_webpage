@@ -64,8 +64,7 @@ export function PickupForm() {
       >
         <fieldset className="min-w-0">
           <legend className="mb-6 font-display text-2xl tracking-tight">
-            <span className="mr-4 font-sans text-xs text-sea">01</span>Tu
-            aperitivo
+            Tu aperitivo
           </legend>
           <div className="border-t border-olive/20">
             {products.map((product) => (
@@ -146,7 +145,7 @@ export function PickupForm() {
         </fieldset>
         <fieldset className="mt-12 min-w-0">
           <legend className="mb-6 font-display text-2xl tracking-tight">
-            <span className="mr-4 font-sans text-xs text-sea">02</span>Tus datos
+            Tus datos
           </legend>
           <div className="grid gap-5 sm:grid-cols-2">
             <label className="text-sm font-semibold">
