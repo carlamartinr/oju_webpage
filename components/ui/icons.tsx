@@ -50,22 +50,3 @@ export function Wave({ className = "h-5 w-20", ...props }: IconProps) {
     </svg>
   );
 }
-
-export function Sun({ className = "size-12", ...props }: IconProps) {
-  return (
-    <svg
-      viewBox="0 0 80 80"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      className={className}
-      aria-hidden="true"
-      {...props}
-    >
-      <circle cx="40" cy="40" r="16" />
-      {Array.from({ length: 16 }, (_, i) => (
-        <path key={i} d="M40 5v12" transform={`rotate(${i * 22.5} 40 40)`} />
-      ))}
-    </svg>
-  );
-}

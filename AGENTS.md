@@ -45,3 +45,11 @@ Se trata de un proyecto para una empresa / tienda de alimentación (de gildas, a
 - Al comprobar el logo, validar también la carga real en móvil; se sirve el PNG original sin optimización dinámica para evitar la demora observada al generar tamaños nuevos.
 - En Next.js 16, si se usa desplazamiento suave global, añadir `data-scroll-behavior="smooth"` a `html` para que las transiciones de ruta restablezcan correctamente el desplazamiento.
 - Revisar formularios también a 320 px: los `fieldset` necesitan `min-w-0` y los controles de cantidad deben pasar a una segunda fila cuando el espacio es reducido.
+
+## Simplificación visual
+- En Carta, mostrar títulos de sección sin números ni frases auxiliares. No repetir la categoría encima de cada artículo.
+- La cinta de productos comparte el ancho y los márgenes del texto de la página; en ella solo aparecen ilustración y nombre. Los ingredientes se consultan en Carta.
+- El hero no lleva botón a Carta ni sello «Mucho sur. Mucho sabor.».
+- Eliminar del carrusel el texto «Una muestra de nuestra futura carta…».
+- Contacto debe ser explícito («Contacta con nosotros»), con fondo verde de marca y texto albariza.
+- No utilizar soles como decoración. Reutilizar el motivo original de aceitunas que forma el punto de la j del logo.

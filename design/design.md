@@ -37,7 +37,7 @@ El diseño de los productos como gildas o aceitunas será animado, no serán fot
 
 ## Primera implementación · septiembre 2026
 - Estilos con Tailwind CSS y tokens de color centralizados. Archivo Black en titulares; Arial/Helvetica en texto continuo para mejorar la legibilidad.
-- Dirección editorial: mucho espacio, titulares grandes y compactos, líneas finas, imágenes recortadas, arcos suaves y botones redondos. El azul aparece en acentos y contacto.
+- Dirección editorial: mucho espacio, titulares grandes y compactos, líneas finas, imágenes recortadas, arcos suaves y botones redondos. El azul aparece en acentos; contacto utiliza el verde de marca.
 - Eslogan propuesto: «El sur se come a bocados». Tono cercano andaluz, sin exagerar expresiones ni atribuir hechos no confirmados a la marca.
 - Ilustraciones SVG originales y reutilizables: formas orgánicas, verdes oliva, sombras planas y brillos pintados, siguiendo la referencia ilustrada del usuario. Sin realismo fotográfico. Gildas, aceitunas y vermú comparten el mismo lenguaje visual.
 - Cinta de productos continua, infinita y a velocidad constante, sin controles ni pausas al pasar el cursor. Dos grupos idénticos permiten un bucle sin salto. Con movimiento reducido se muestra un único grupo desplazable manualmente.
@@ -51,3 +51,10 @@ El diseño de los productos como gildas o aceitunas será animado, no serán fot
 - Las ilustraciones se apoyan directamente sobre albariza, sin tarjetas blancas ni fondos arqueados. Se conservan las líneas finas y la jerarquía de producto/ingredientes.
 - Logo original visible a la izquierda (120 px en escritorio / 80 px en móvil). Navegación a 18 px en escritorio y 14–16 px en móvil.
 - Las imágenes generadas de la primera exploración quedan archivadas en `public/images/products/`, pero ya no se usan en la interfaz. Los SVG vivos están en `components/illustrations/`.
+
+## Revisión de jerarquía y marca
+- Carta: encabezados de categoría sin numeración ni frases laterales; artículos con nombre e ingredientes, sin repetir la categoría.
+- Carrusel: mismo contenedor `max-w-7xl` y márgenes `px-6 md:px-12` que el resto de la página. Solo ilustración y nombre; el enlace «Toda la carta» permite ampliar información. Se elimina el aviso de muestra bajo la cinta.
+- Hero sin enlace a Carta ni sello circular «Mucho sur. Mucho sabor.».
+- Contacto verde (#152D0B), texto albariza y encabezado directo «Contacta con nosotros».
+- Los soles se sustituyen por el motivo de aceitunas original del logo, mostrado mediante una máscara SVG del PNG existente para conservar su silueta.

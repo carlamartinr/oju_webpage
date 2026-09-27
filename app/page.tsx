@@ -1,9 +1,10 @@
+import { LogoOlives } from "@/components/ui/logo-olives";
 import { Hero } from "@/features/home/hero";
 import { ProductCarousel } from "@/features/home/product-carousel";
 import { VisitSection } from "@/features/home/visit-section";
 import { ContactSection } from "@/features/home/contact-section";
 import { ButtonLink } from "@/components/ui/button-link";
-import { Sun, Wave } from "@/components/ui/icons";
+import { Wave } from "@/components/ui/icons";
 
 export default function Home() {
   return (
@@ -12,7 +13,7 @@ export default function Home() {
       <ProductCarousel />
       <section className="bg-olive px-6 py-16 text-albariza md:py-20">
         <div className="mx-auto flex max-w-5xl flex-col items-center gap-7 text-center">
-          <Sun className="size-14" />
+          <LogoOlives className="size-14" />
           <p className="text-[10px] uppercase tracking-[0.25em]">
             Una forma muy nuestra de disfrutar
           </p>

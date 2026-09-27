@@ -1,7 +1,8 @@
+import { LogoOlives } from "@/components/ui/logo-olives";
 import type { Metadata } from "next";
 import { PhotoPlaceholder } from "@/components/ui/photo-placeholder";
 import { ButtonLink } from "@/components/ui/button-link";
-import { Sun, Wave } from "@/components/ui/icons";
+import { Wave } from "@/components/ui/icons";
 
 export const metadata: Metadata = { title: "Conócenos" };
 
@@ -61,7 +62,7 @@ export default function AboutPage() {
               volver a juntarse.
             </p>
           </div>
-          <Sun className="mx-auto size-40 md:size-60" />
+          <LogoOlives className="mx-auto size-40 md:size-60" />
         </div>
       </section>
       <section className="px-6 py-16 text-center">

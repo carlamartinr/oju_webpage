@@ -1,4 +1,5 @@
-import { Sun, Wave } from "./icons";
+import { LogoOlives } from "@/components/ui/logo-olives";
+import { Wave } from "./icons";
 
 export function PhotoPlaceholder({
   label,
@@ -9,7 +10,7 @@ export function PhotoPlaceholder({
 }) {
   return (
     <div className="relative flex min-h-80 flex-col items-center justify-center overflow-hidden rounded-t-[45%] border border-olive/15 bg-paper p-8 md:min-h-110">
-      <Sun className="mb-6 size-14 text-sea" />
+      <LogoOlives className="mb-6 size-14 text-sea" />
       <span className="font-display text-7xl tracking-tight text-olive/20">
         Ojú
       </span>
