@@ -39,9 +39,15 @@ El diseño de los productos como gildas o aceitunas será animado, no serán fot
 - Estilos con Tailwind CSS y tokens de color centralizados. Archivo Black en titulares; Arial/Helvetica en texto continuo para mejorar la legibilidad.
 - Dirección editorial: mucho espacio, titulares grandes y compactos, líneas finas, imágenes recortadas, arcos suaves y botones redondos. El azul aparece en acentos y contacto.
 - Eslogan propuesto: «El sur se come a bocados». Tono cercano andaluz, sin exagerar expresiones ni atribuir hechos no confirmados a la marca.
-- Ilustraciones de producto generadas con volumen y fondo transparente; imágenes locales optimizadas por Next.js. Animación de entrada y carrusel con GSAP, respetando movimiento reducido.
-- Carrusel con controles, pausa manual y pausa durante interacción. En móvil admite desplazamiento táctil.
+- Ilustraciones SVG originales y reutilizables: formas orgánicas, verdes oliva, sombras planas y brillos pintados, siguiendo la referencia ilustrada del usuario. Sin realismo fotográfico. Gildas, aceitunas y vermú comparten el mismo lenguaje visual.
+- Cinta de productos continua, infinita y a velocidad constante, sin controles ni pausas al pasar el cursor. Dos grupos idénticos permiten un bucle sin salto. Con movimiento reducido se muestra un único grupo desplazable manualmente.
 - Carrito presentado como futura funcionalidad, sin acción de compra ficticia.
 - Carta provisional autorizada: La clásica, La salerosa, Al limón, Aliño del sur y Vermú de la casa. Los ingredientes y formatos son de ejemplo, sin precios ni disponibilidad inventados.
 - Datos del local, contacto y fotografías reales pendientes; no se inventarán personas, dirección, horarios ni historia.
 - Reserva es recogida de productos. Primera versión: selección y resumen local sin envío, pago, almacenamiento ni confirmación real.
+
+## Revisión de ilustración y movimiento
+- Hero: la gilda se monta al entrar. Aparece el palillo y se deslizan los ingredientes de abajo arriba en secuencia solapada, con desaceleración suave y sin rebotes. El estado final permanece estable.
+- Las ilustraciones se apoyan directamente sobre albariza, sin tarjetas blancas ni fondos arqueados. Se conservan las líneas finas y la jerarquía de producto/ingredientes.
+- Logo original visible a la izquierda (120 px en escritorio / 80 px en móvil). Navegación a 18 px en escritorio y 14–16 px en móvil.
+- Las imágenes generadas de la primera exploración quedan archivadas en `public/images/products/`, pero ya no se usan en la interfaz. Los SVG vivos están en `components/illustrations/`.

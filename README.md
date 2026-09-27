@@ -28,9 +28,10 @@ Las reglas visuales están en `design/design.md`.
 - `features/catalog/`: presentación de productos.
 - `features/reservations/`: selección, validación y resumen de recogida.
 - `data/products.ts`: carta ficticia tipada, centralizada para carta y reservas.
-- `public/images/products/`: ilustraciones generadas con la herramienta integrada de imagen; prompts en `design/assets/prompts.md`.
+- `components/illustrations/`: ilustraciones SVG por ingredientes, compartidas entre portada, carta y reserva.
+- `public/images/products/`: exploración visual inicial archivada; ya no se usa en la interfaz. Prompts en `design/assets/prompts.md`.
 
-Tailwind CSS define los estilos y tokens. Archivo Black se sirve localmente con Fontsource. GSAP gestiona entrada y carrusel, respetando movimiento reducido.
+Tailwind CSS define los estilos y tokens. Archivo Black se sirve localmente con Fontsource. GSAP gestiona el montaje de la gilda y la cinta infinita, respetando movimiento reducido.
 
 ## Estado de la primera versión
 
