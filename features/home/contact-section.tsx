@@ -7,7 +7,7 @@ export function ContactSection() {
       className="bg-olive px-6 py-16 text-albariza md:px-12 md:py-20"
     >
       <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-2 md:items-center">
-        <div>
+        <div data-reveal>
           <p className="mb-4 text-[10px] uppercase tracking-[0.22em]">
             Estamos para ayudarte
           </p>

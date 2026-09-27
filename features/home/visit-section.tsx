@@ -7,7 +7,7 @@ export function VisitSection() {
       className="mx-auto grid max-w-7xl gap-12 px-6 py-16 md:grid-cols-2 md:items-center md:gap-20 md:px-12 md:py-24"
     >
       <PhotoPlaceholder label="Aquí irá una foto de nuestro rincón" />
-      <div>
+      <div data-reveal>
         <p className="mb-5 text-[10px] font-semibold uppercase tracking-[0.22em] text-sea">
           Donde encontrarnos
         </p>
