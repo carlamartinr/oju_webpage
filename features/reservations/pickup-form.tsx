@@ -55,13 +55,14 @@ export function PickupForm() {
   return (
     <div className="grid gap-12 lg:grid-cols-[1.5fr_1fr] lg:gap-16">
       <form
+        className="min-w-0"
         onSubmit={submit}
         onChange={() => {
           setSummary(null);
           setError(null);
         }}
       >
-        <fieldset>
+        <fieldset className="min-w-0">
           <legend className="mb-6 font-display text-2xl tracking-tight">
             <span className="mr-4 font-sans text-xs text-sea">01</span>Tu
             aperitivo
@@ -70,12 +71,12 @@ export function PickupForm() {
             {products.map((product) => (
               <div
                 key={product.id}
-                className="flex items-center gap-4 border-b border-olive/20 py-4"
+                className="grid grid-cols-[3rem_minmax(0,1fr)] items-center gap-x-3 gap-y-2 border-b border-olive/20 py-4 sm:flex sm:gap-4"
               >
                 <ProductIllustration
                   product={product}
                   decorative
-                  className="size-16 shrink-0"
+                  className="size-12 shrink-0 sm:size-16"
                 />
                 <div className="min-w-0 flex-1">
                   <label htmlFor={product.id} className="font-display text-sm">
@@ -83,7 +84,7 @@ export function PickupForm() {
                   </label>
                   <p className="mt-1 text-xs text-olive/65">{product.unit}</p>
                 </div>
-                <div className="flex items-center gap-1">
+                <div className="col-start-2 flex items-center gap-1">
                   <button
                     type="button"
                     aria-label={`Quitar uno de ${product.name}`}
@@ -143,7 +144,7 @@ export function PickupForm() {
             ))}
           </div>
         </fieldset>
-        <fieldset className="mt-12">
+        <fieldset className="mt-12 min-w-0">
           <legend className="mb-6 font-display text-2xl tracking-tight">
             <span className="mr-4 font-sans text-xs text-sea">02</span>Tus datos
           </legend>
