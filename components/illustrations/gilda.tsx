@@ -1,4 +1,4 @@
-import { Anchovy, Olive, Pepper, RedPepper } from "./ingredients";
+import { Anchovy, Olive, Pepper, RedPepper, useSvgIds } from "./ingredients";
 
 export function Gilda({
   variant = "classic",
@@ -9,6 +9,7 @@ export function Gilda({
   className?: string;
   decorative?: boolean;
 }) {
+  const ids = useSvgIds();
   return (
     <svg
       viewBox="0 0 600 600"
@@ -22,16 +23,24 @@ export function Gilda({
           : `Ilustración de gilda ${variant === "classic" ? "de anchoa" : "de boquerón"}`
       }
     >
+      <defs>
+        <linearGradient id={ids("wood")} x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stopColor="#9a7641" />
+          <stop offset=".45" stopColor="#dcc08a" />
+          <stop offset="1" stopColor="#a8854f" />
+        </linearGradient>
+      </defs>
       <g transform="rotate(-23 300 300)">
         <g data-skewer>
           <path
             d="M297 39 306 96 303 552 298 572 294 539 295 92Z"
-            fill="#b49357"
+            fill={`url(#${ids("wood")})`}
           />
           <path
             d="M297 44 300 101 299 544"
-            stroke="#e0c48a"
-            strokeWidth="3"
+            stroke="#f3e2b8"
+            strokeOpacity=".7"
+            strokeWidth="2"
             strokeLinecap="round"
           />
           <path d="m301 105 1 426" stroke="#8d7348" strokeWidth="1.5" />

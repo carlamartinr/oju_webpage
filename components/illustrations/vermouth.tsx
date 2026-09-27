@@ -1,4 +1,4 @@
-import { Olive } from "./ingredients";
+import { Olive, useSvgIds } from "./ingredients";
 
 export function Vermouth({
   className,
@@ -7,6 +7,7 @@ export function Vermouth({
   className?: string;
   decorative?: boolean;
 }) {
+  const ids = useSvgIds();
   return (
     <svg
       viewBox="0 0 600 600"
@@ -18,62 +19,150 @@ export function Vermouth({
         decorative ? undefined : "Ilustración de vermú con naranja y aceituna"
       }
     >
+      <defs>
+        <radialGradient id={ids("shadow")} cx=".5" cy=".5" r=".5">
+          <stop offset="0" stopColor="#6b2214" stopOpacity=".3" />
+          <stop offset=".6" stopColor="#152d0b" stopOpacity=".12" />
+          <stop offset="1" stopColor="#152d0b" stopOpacity="0" />
+        </radialGradient>
+        <linearGradient id={ids("liquid")} x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stopColor="#4d130b" />
+          <stop offset=".3" stopColor="#9c3a22" />
+          <stop offset=".55" stopColor="#b8522d" />
+          <stop offset="1" stopColor="#4a120a" />
+        </linearGradient>
+        <linearGradient id={ids("surface")} x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stopColor="#d27a45" />
+          <stop offset="1" stopColor="#8c3019" />
+        </linearGradient>
+        <linearGradient id={ids("glass")} x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stopColor="#dfe6df" stopOpacity=".55" />
+          <stop offset=".5" stopColor="#f5f5ec" stopOpacity=".15" />
+          <stop offset="1" stopColor="#c9d3cc" stopOpacity=".5" />
+        </linearGradient>
+        <radialGradient id={ids("orange")} cx=".45" cy=".45" r=".6">
+          <stop offset="0" stopColor="#ffc56b" />
+          <stop offset=".75" stopColor="#f39a2c" />
+          <stop offset="1" stopColor="#d9731a" />
+        </radialGradient>
+      </defs>
+      <ellipse
+        cx="306"
+        cy="474"
+        rx="170"
+        ry="26"
+        fill={`url(#${ids("shadow")})`}
+      />
       <path
         d="M176 203 199 463Q300 511 401 463L424 203Z"
-        fill="#c4c4a5"
-        fillOpacity=".3"
-        stroke="#748b86"
+        fill={`url(#${ids("glass")})`}
+      />
+      <path
+        d="m186 278 18 168q96 40 192 0l18-168Z"
+        fill={`url(#${ids("liquid")})`}
+      />
+      <g fill="#f3c9a6" opacity=".16">
+        <path d="m222 330 42-8 10 44-44 8Z" />
+        <path d="m300 356 46-4 4 46-46 4Z" />
+      </g>
+      <ellipse
+        cx="300"
+        cy="279"
+        rx="113"
+        ry="32"
+        fill={`url(#${ids("surface")})`}
+      />
+      <path
+        d="M204 286C240 300 330 304 384 290"
+        stroke="#f0a36e"
+        strokeOpacity=".5"
         strokeWidth="3"
-      />
-      <path d="m186 278 20 175q94 43 189 0l19-175Z" fill="#9c482c" />
-      <ellipse cx="300" cy="279" rx="113" ry="34" fill="#bc6637" />
-      <path
-        d="m217 332 9 99M247 354l4 93M282 348l2 106M318 352l-2 102M353 350l-5 99M385 330l-11 108"
-        stroke="#da9961"
-        strokeWidth="7"
-        strokeLinecap="round"
-        opacity=".65"
-      />
-      <path d="M231 270 275 252 305 287 262 309Z" fill="#d7bd86" />
-      <path d="m279 314 54-26 29 35-48 31Z" fill="#d6b684" />
-      <path
-        d="m239 270 33-10 20 22M293 315l37-18 21 26"
-        stroke="#f1dfb2"
-        strokeWidth="5"
         strokeLinecap="round"
       />
+      <g>
+        <path
+          d="M232 268 272 250 304 284 264 306Z"
+          fill="#f7eee0"
+          fillOpacity=".55"
+        />
+        <path
+          d="m280 312 52-24 30 34-48 30Z"
+          fill="#f7eee0"
+          fillOpacity=".45"
+        />
+        <path
+          d="m238 268 33-13 20 22M288 314l40-19 20 24"
+          stroke="#fff"
+          strokeOpacity=".85"
+          strokeWidth="3"
+          strokeLinecap="round"
+        />
+      </g>
+      <g transform="translate(336 196) rotate(-18)">
+        <path d="M-58 22A58 58 0 1 1 58 22Z" fill="#df7a1f" />
+        <path d="M-52 18A52 52 0 1 1 52 18Z" fill="#fbe7c2" />
+        <path d="M-46 16A46 46 0 1 1 46 16Z" fill={`url(#${ids("orange")})`} />
+        <g stroke="#fbe7c2" strokeWidth="2.5" strokeLinecap="round">
+          {[-80, -50, -20, 10, 40, 70].map((angle) => (
+            <path
+              key={angle}
+              d="M0 12V-32"
+              transform={`rotate(${angle} 0 14)`}
+            />
+          ))}
+        </g>
+        <path
+          d="M-40-8A44 44 0 0 1-12-38"
+          stroke="#fff6df"
+          strokeWidth="3"
+          strokeLinecap="round"
+        />
+      </g>
       <path
-        d="M287 214C250 137 319 98 364 124 407 148 391 196 379 225Z"
-        fill="#c87932"
-      />
-      <path
-        d="M300 209C270 147 321 116 354 135 389 156 379 187 370 211Z"
-        fill="#e4ad50"
-      />
-      <path
-        d="m329 175-26-26m27 27 13-39m-11 40 42-12m-43 14 37 23m-39-24-19 29"
-        stroke="#f1d195"
+        d="M176 205C190 248 410 248 424 205"
+        stroke="#8fa39c"
         strokeWidth="3"
+        strokeLinecap="round"
       />
       <path
-        d="M179 206C192 250 408 251 422 207M207 465Q302 506 396 465"
-        stroke="#7e958e"
+        d="M176 203C190 170 410 170 424 203"
+        stroke="#b7c5bf"
+        strokeOpacity=".7"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+      <path
+        d="M176 203 199 463Q300 511 401 463L424 203"
+        stroke="#8fa39c"
+        strokeWidth="3"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M204 440Q300 482 396 440L401 463Q300 511 199 463Z"
+        fill="#e9efe8"
+        fillOpacity=".45"
+      />
+      <path
+        d="m192 222 10 104m6 70 5 44"
+        stroke="#fff"
+        strokeOpacity=".85"
+        strokeWidth="6"
+        strokeLinecap="round"
+      />
+      <path
+        d="m405 232-6 70"
+        stroke="#fff"
+        strokeOpacity=".5"
+        strokeWidth="3"
+        strokeLinecap="round"
+      />
+      <path
+        d="m262 256 190-96"
+        stroke="#b08e57"
         strokeWidth="4"
         strokeLinecap="round"
       />
-      <path
-        d="m190 210 8 73m9 151 3 22"
-        stroke="#f5f1e8"
-        strokeWidth="5"
-        strokeLinecap="round"
-      />
-      <path
-        d="m278 240 169-84"
-        stroke="#b49460"
-        strokeWidth="5"
-        strokeLinecap="round"
-      />
-      <g transform="translate(391 184) rotate(22) scale(.55)">
+      <g transform="translate(398 188) rotate(22) scale(.55)">
         <Olive />
       </g>
     </svg>
