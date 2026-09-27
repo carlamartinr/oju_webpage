@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef } from "react";
 import Link from "next/link";
 import gsap from "gsap";
 import { products } from "@/data/products";
@@ -8,76 +8,57 @@ import { ProductCard } from "@/features/catalog/product-card";
 import { ArrowIcon } from "@/components/ui/icons";
 
 export function ProductCarousel() {
+  const root = useRef<HTMLElement>(null);
   const track = useRef<HTMLDivElement>(null);
-  const [paused, setPaused] = useState(false);
-  const [hovered, setHovered] = useState(false);
-  const [focused, setFocused] = useState(false);
-  const [reducedMotion, setReducedMotion] = useState(false);
-  const tween = useRef<gsap.core.Tween | null>(null);
+  const firstSet = useRef<HTMLDivElement>(null);
 
-  function move(direction: number) {
-    const element = track.current;
-    if (!element) return;
-    const card = element.firstElementChild as HTMLElement;
-    const max = element.scrollWidth - element.clientWidth;
-    const step = card.offsetWidth + 24;
-    const next =
-      direction > 0 && element.scrollLeft >= max - 5
-        ? 0
-        : direction < 0 && element.scrollLeft <= 5
-          ? max
-          : Math.max(0, Math.min(max, element.scrollLeft + direction * step));
-    tween.current?.kill();
-    tween.current = gsap.to(element, {
-      scrollLeft: next,
-      duration: window.matchMedia("(prefers-reduced-motion: reduce)").matches
-        ? 0
-        : 0.6,
-      ease: "power2.inOut",
-    });
-  }
-
-  useEffect(() => {
-    const query = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const update = () => setReducedMotion(query.matches);
-    update();
-    query.addEventListener("change", update);
-    return () => {
-      query.removeEventListener("change", update);
-      tween.current?.kill();
-    };
+  useLayoutEffect(() => {
+    const media = gsap.matchMedia();
+    media.add(
+      "(prefers-reduced-motion: no-preference)",
+      () => {
+        const element = track.current;
+        const group = firstSet.current;
+        if (!element || !group) return;
+        let loop: gsap.core.Tween | undefined;
+        let width = 0;
+        const resize = () => {
+          const nextWidth = group.getBoundingClientRect().width;
+          if (!nextWidth || nextWidth === width) return;
+          const progress = loop?.progress() ?? 0;
+          loop?.kill();
+          width = nextWidth;
+          // Both sets have exactly the same width, including the trailing gap.
+          // The end frame and the start frame are visually identical.
+          loop = gsap.fromTo(
+            element,
+            { x: 0 },
+            { x: -width, duration: width / 38, ease: "none", repeat: -1 },
+          );
+          loop.progress(progress);
+        };
+        resize();
+        const observer = new ResizeObserver(resize);
+        observer.observe(group);
+        return () => {
+          observer.disconnect();
+          loop?.kill();
+          gsap.set(element, { clearProps: "transform" });
+        };
+      },
+      root,
+    );
+    return () => media.revert();
   }, []);
-
-  useEffect(() => {
-    if (paused || hovered || focused || reducedMotion) return;
-    const timer = window.setInterval(() => {
-      const element = track.current;
-      if (
-        element &&
-        !document.hidden &&
-        element.getBoundingClientRect().top < window.innerHeight &&
-        element.getBoundingClientRect().bottom > 0
-      )
-        move(1);
-    }, 5000);
-    return () => window.clearInterval(timer);
-  }, [paused, hovered, focused, reducedMotion]);
 
   return (
     <section
+      ref={root}
       id="productos"
       aria-label="Nuestros productos"
-      aria-roledescription="carrusel"
-      className="mx-auto max-w-7xl px-6 py-16 md:px-12 md:py-24"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      onFocusCapture={() => setFocused(true)}
-      onBlurCapture={(event) => {
-        if (!event.currentTarget.contains(event.relatedTarget))
-          setFocused(false);
-      }}
+      className="py-16 md:py-24"
     >
-      <div className="mb-9 flex flex-wrap items-end justify-between gap-6">
+      <div className="mx-auto mb-6 flex max-w-7xl flex-wrap items-end justify-between gap-6 px-6 md:px-12">
         <div>
           <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.22em] text-sea">
             Pequeños bocados. Grandes momentos.
@@ -97,77 +78,38 @@ export function ProductCarousel() {
         </Link>
       </div>
       <div
-        ref={track}
-        id="product-track"
+        className="overflow-x-auto motion-safe:overflow-hidden"
         tabIndex={0}
-        aria-label="Productos de ejemplo; desliza para ver más"
-        onPointerDown={() => {
-          setPaused(true);
-          tween.current?.kill();
-        }}
-        onKeyDown={(event) => {
-          if (event.target !== event.currentTarget) return;
-          if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
-            event.preventDefault();
-            setPaused(true);
-            move(event.key === "ArrowRight" ? 1 : -1);
-          }
-        }}
-        className="flex gap-6 overflow-x-auto overscroll-x-contain pb-3 [scrollbar-width:thin]"
+        aria-label="Productos de ejemplo. Consulta todos los detalles en la carta."
       >
-        {products.map((product, index) => (
-          <div
-            key={product.id}
-            role="group"
-            aria-roledescription="diapositiva"
-            aria-label={`${index + 1} de ${products.length}`}
-            className="w-[84%] shrink-0 sm:w-[calc((100%-24px)/2)] lg:w-[calc((100%-48px)/3)]"
-          >
-            <ProductCard product={product} number={index + 1} />
-          </div>
-        ))}
-      </div>
-      <div className="mt-3 flex flex-wrap items-center justify-between gap-3">
-        <p className="text-xs text-olive/65">
-          Una muestra de nuestra futura carta. Productos de ejemplo.
-        </p>
-        <div className="flex items-center gap-2">
-          {!reducedMotion && (
-            <button
-              type="button"
-              onClick={() => setPaused(!paused)}
-              aria-pressed={paused}
-              className="mr-2 min-h-11 px-2 text-xs underline underline-offset-4"
+        <div
+          ref={track}
+          data-product-track
+          className="flex w-max will-change-transform motion-reduce:will-change-auto"
+        >
+          {[0, 1].map((copy) => (
+            <div
+              ref={copy === 0 ? firstSet : undefined}
+              key={copy}
+              data-product-set
+              aria-hidden={copy === 1 || undefined}
+              className={`flex shrink-0 gap-8 pr-8 md:gap-14 md:pr-14 ${copy === 1 ? "motion-reduce:hidden" : ""}`}
             >
-              {paused ? "Activar rotación" : "Pausar rotación"}
-            </button>
-          )}
-          <button
-            type="button"
-            aria-label="Productos anteriores"
-            aria-controls="product-track"
-            onClick={() => {
-              setPaused(true);
-              move(-1);
-            }}
-            className="flex size-11 items-center justify-center rounded-full border border-olive/30 hover:bg-paper"
-          >
-            <ArrowIcon className="size-5 rotate-180" />
-          </button>
-          <button
-            type="button"
-            aria-label="Productos siguientes"
-            aria-controls="product-track"
-            onClick={() => {
-              setPaused(true);
-              move(1);
-            }}
-            className="flex size-11 items-center justify-center rounded-full border border-olive/30 hover:bg-paper"
-          >
-            <ArrowIcon />
-          </button>
+              {products.map((product) => (
+                <div
+                  key={product.id}
+                  className="w-[72vw] max-w-90 shrink-0 md:w-80 lg:w-90"
+                >
+                  <ProductCard product={product} />
+                </div>
+              ))}
+            </div>
+          ))}
         </div>
       </div>
+      <p className="mx-auto mt-6 max-w-7xl px-6 text-xs text-olive/65 md:px-12">
+        Una muestra de nuestra futura carta. Productos de ejemplo.
+      </p>
     </section>
   );
 }
