@@ -43,12 +43,10 @@ export default function MenuPage() {
           </a>
         ))}
       </nav>
-      {categories.map((category, index) => (
+      {categories.map((category) => (
         <section key={category.id} id={category.id} className="mb-20">
-          <div className="mb-8 flex flex-wrap items-baseline gap-x-6 gap-y-3 border-t border-olive/20 pt-6">
-            <span className="font-mono text-xs text-sea">0{index + 1}</span>
+          <div className="mb-8 border-t border-olive/20 pt-6">
             <h2 className="text-4xl tracking-tight">{category.label}</h2>
-            <p className="text-sm text-olive/70">{category.description}</p>
           </div>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {products

@@ -56,9 +56,9 @@ export function ProductCarousel() {
       ref={root}
       id="productos"
       aria-label="Nuestros productos"
-      className="py-16 md:py-24"
+      className="mx-auto max-w-7xl px-6 py-16 md:px-12 md:py-24"
     >
-      <div className="mx-auto mb-6 flex max-w-7xl flex-wrap items-end justify-between gap-6 px-6 md:px-12">
+      <div className="mb-6 flex flex-wrap items-end justify-between gap-6">
         <div>
           <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.22em] text-sea">
             Pequeños bocados. Grandes momentos.
@@ -100,16 +100,13 @@ export function ProductCarousel() {
                   key={product.id}
                   className="w-[72vw] max-w-90 shrink-0 md:w-80 lg:w-90"
                 >
-                  <ProductCard product={product} />
+                  <ProductCard product={product} showIngredients={false} />
                 </div>
               ))}
             </div>
           ))}
         </div>
       </div>
-      <p className="mx-auto mt-6 max-w-7xl px-6 text-xs text-olive/65 md:px-12">
-        Una muestra de nuestra futura carta. Productos de ejemplo.
-      </p>
     </section>
   );
 }

@@ -57,21 +57,17 @@ export const products: Product[] = [
 export const categories: {
   id: Category;
   label: string;
-  description: string;
 }[] = [
   {
     id: "gildas",
     label: "Gildas",
-    description: "Pequeñas, sí. Pero con mucho que decir.",
   },
   {
     id: "aceitunas",
     label: "Aceitunas",
-    description: "Ese «una más» que nunca es la última.",
   },
   {
     id: "bebidas",
     label: "Bebidas",
-    description: "Hay compañías que lo mejoran todo.",
   },
 ];

@@ -3,8 +3,7 @@
 import { Gilda } from "@/components/illustrations/gilda";
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
-import { ButtonLink } from "@/components/ui/button-link";
-import { ArrowIcon, Sun, Wave } from "@/components/ui/icons";
+import { ArrowIcon, Wave } from "@/components/ui/icons";
 
 export function Hero() {
   const root = useRef<HTMLElement>(null);
@@ -75,9 +74,6 @@ export function Hero() {
             Una gilda, una buena charla y todo el tiempo del mundo. Eso también
             es el sur.
           </p>
-          <div data-hero-copy className="mt-8">
-            <ButtonLink href="/carta">Descubre la carta</ButtonLink>
-          </div>
         </div>
         <div className="relative mx-auto w-full max-w-145 py-6 md:py-0">
           <div
@@ -89,14 +85,6 @@ export function Hero() {
             className="absolute inset-[15%] rounded-full border border-olive/10"
           />
           <Gilda className="relative z-10 h-auto w-full" />
-          <div className="absolute bottom-0 right-0 z-10 flex size-25 rotate-10 flex-col items-center justify-center rounded-full bg-sea text-albariza sm:bottom-4 sm:size-30">
-            <Sun className="mb-1 size-8" />
-            <span className="text-center text-[9px] font-semibold uppercase tracking-[0.13em]">
-              Mucho sur.
-              <br />
-              Mucho sabor.
-            </span>
-          </div>
           <p className="absolute left-0 top-0 -rotate-8 font-serif text-xl italic text-sea md:left-7">
             ¡Ojú, qué cosa más buena!
           </p>
