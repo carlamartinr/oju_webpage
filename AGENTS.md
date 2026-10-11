@@ -39,6 +39,7 @@ Se trata de un proyecto para una empresa / tienda de alimentación (de gildas, a
 ## Correcciones de diseño
 - Los productos son ilustraciones editoriales semirrealistas: volumen con degradados suaves, brillos especulares, sombras de contacto y texturas sutiles. Evitar tanto el acabado plano/caricaturesco como el fotorrealismo o 3D.
 - Cada producto debe distinguirse por rasgos reales, no solo por un detalle pequeño: tipo de aceituna (manzanilla entera frente a partida), recipiente (cuenco vidriado frente a cazuela de barro), pescado (anchoa curada frente a boquerón blanco) y acompañamientos.
+- En componentes renderizados en servidor y cliente, no generar atributos con `**`, `Math.pow` ni funciones trigonométricas sin redondear: cada motor JS puede dar decimales distintos y provoca errores de hidratación. Usar multiplicaciones y redondear.
 - Los degradados SVG usan ids únicos (`useSvgIds`), porque las ilustraciones se repiten en la misma página.
 - Los componentes de ingrediente deben ser autónomos (`fill="none"` en su grupo raíz): no pueden depender de atributos heredados del SVG que los contiene.
 - El movimiento de portada es sutil y centralizado en `HomeMotion` (GSAP + ScrollTrigger, dentro de `matchMedia` de movimiento reducido): revelados únicos y nada en bucle.

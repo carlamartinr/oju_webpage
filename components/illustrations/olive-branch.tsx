@@ -23,14 +23,17 @@ const twig = [
   [230, 250],
   [330, 40],
 ];
+// Server and browser must render identical attributes, so this only uses
+// arithmetic that is exact across JS engines (`**` and `Math.atan2` are not)
+// and rounds the angle.
 function pointAt(t: number) {
   const u = 1 - t;
-  const weights = [u ** 3, 3 * u ** 2 * t, 3 * u * t ** 2, t ** 3];
+  const weights = [u * u * u, 3 * u * u * t, 3 * u * t * t, t * t * t];
   const slopes = [
-    -3 * u ** 2,
-    3 * u ** 2 - 6 * u * t,
-    6 * u * t - 3 * t ** 2,
-    3 * t ** 2,
+    -3 * u * u,
+    3 * u * u - 6 * u * t,
+    6 * u * t - 3 * t * t,
+    3 * t * t,
   ];
   const sum = (values: number[], axis: number) =>
     values.reduce(
@@ -40,7 +43,10 @@ function pointAt(t: number) {
   return {
     x: sum(weights, 0),
     y: sum(weights, 1),
-    angle: (Math.atan2(sum(slopes, 1), sum(slopes, 0)) * 180) / Math.PI,
+    angle:
+      Math.round(
+        ((Math.atan2(sum(slopes, 1), sum(slopes, 0)) * 180) / Math.PI) * 100,
+      ) / 100,
   };
 }
 
