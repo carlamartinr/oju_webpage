@@ -1,21 +1,18 @@
 import { LogoOlives } from "@/components/ui/logo-olives";
-import { Wave } from "./icons";
 
 export function PhotoPlaceholder({
   label,
   kind = "place",
+  className = "aspect-4/5",
 }: {
   label: string;
   kind?: "place" | "people";
+  className?: string;
 }) {
   return (
-    <div className="relative flex min-h-80 flex-col items-center justify-center overflow-hidden rounded-t-[45%] border border-olive/15 bg-paper p-8 md:min-h-110">
-      <LogoOlives className="mb-6 size-14 text-sea" />
-      <span className="font-display text-7xl tracking-tight text-olive/20">
-        Ojú
-      </span>
-      <Wave className="mt-5 h-6 w-28 text-sea/60" />
-      <p className="absolute bottom-7 text-center text-xs text-olive/70">
+    <div className={`relative flex w-full ${className} flex-col items-center justify-center overflow-hidden rounded-2xl bg-olive/6 p-8`}>
+      <LogoOlives className="size-16 text-olive/25" />
+      <p className="absolute inset-x-8 bottom-7 text-center text-xs text-olive/60">
         {label}
       </p>
       <span className="sr-only">

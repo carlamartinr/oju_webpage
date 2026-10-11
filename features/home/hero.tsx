@@ -97,13 +97,6 @@ export function Hero() {
       <div className="relative mx-auto max-w-7xl px-6 pb-8 pt-8 md:px-12 md:pb-10 md:pt-12">
         <div className="grid items-center gap-6 md:min-h-145 md:grid-cols-[1.05fr_1fr] md:gap-0">
           <div className="relative z-10">
-            <p
-              data-hero-copy
-              className="mb-7 flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.23em] sm:text-xs"
-            >
-              <span className="h-px w-8 bg-olive" />
-              Olivas y gildas del sur
-            </p>
             <h1
               data-hero-copy
               className="text-[clamp(3.3rem,7.2vw,6.6rem)] leading-[0.98] tracking-[-0.055em]"
@@ -115,10 +108,9 @@ export function Hero() {
             </h1>
             <p
               data-hero-copy
-              className="mt-7 max-w-80 text-base leading-relaxed text-olive/80"
+              className="mt-8 text-lg text-olive/75 md:text-xl"
             >
-              Una gilda, una buena charla y todo el tiempo del mundo. Eso
-              también es el sur.
+              Olivas y gildas del sur.
             </p>
           </div>
           <div className="relative mx-auto w-full max-w-145 py-6 md:py-0">

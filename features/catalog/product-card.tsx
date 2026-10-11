@@ -26,7 +26,7 @@ export function ProductCard({
         />
       </div>
       <div className={`pt-5 ${centered ? "text-center" : ""}`}>
-        <h3 className="text-xl md:text-2xl">{product.name}</h3>
+        <h3 className="text-lg md:text-xl">{product.name}</h3>
         {showDetails && (
           <>
             <p className="mt-2 text-sm leading-relaxed text-olive/75">

@@ -13,10 +13,10 @@ export function ButtonLink({
   return (
     <Link
       href={href}
-      className={`group inline-flex min-h-13 items-center justify-between gap-8 rounded-full border px-7 py-3 text-sm font-bold transition-colors ${light ? "border-albariza bg-albariza text-olive hover:bg-transparent hover:text-albariza" : "border-olive bg-olive text-albariza hover:bg-transparent hover:text-olive"}`}
+      className={`group inline-flex min-h-11 items-center gap-3 border px-5 py-2.5 text-sm font-semibold transition-colors ${light ? "border-albariza/60 text-albariza hover:border-albariza hover:bg-albariza hover:text-olive" : "border-olive/60 text-olive hover:border-olive hover:bg-olive hover:text-albariza"}`}
     >
       {children}
-      <ArrowIcon className="size-5 transition-transform group-hover:translate-x-1" />
+      <ArrowIcon className="size-4 transition-transform group-hover:translate-x-0.5" />
     </Link>
   );
 }

@@ -16,7 +16,6 @@ export function Footer() {
           <Link href="/#contacto" className="py-2 hover:underline">
             Contacto
           </Link>
-          <span>Hecho con acento andaluz.</span>
         </div>
       </div>
     </footer>
