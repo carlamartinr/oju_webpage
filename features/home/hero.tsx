@@ -104,7 +104,7 @@ export function Hero() {
               El sur
               <br />
               se come
-              <br />a <span className="text-sea">bocados.</span>
+              <br />a <span className="text-sea">bocados</span>
             </h1>
             <p
               data-hero-copy
