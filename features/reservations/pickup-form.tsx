@@ -1,7 +1,7 @@
 "use client";
 
-import { ProductIllustration } from "@/components/illustrations/product-illustration";
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import type { FormEvent } from "react";
 import { products } from "@/data/products";
 import { ArrowIcon } from "@/components/ui/icons";
@@ -72,16 +72,20 @@ export function PickupForm() {
                 key={product.id}
                 className="grid grid-cols-[3rem_minmax(0,1fr)] items-center gap-x-3 gap-y-2 border-b border-olive/20 py-4 sm:flex sm:gap-4"
               >
-                <ProductIllustration
-                  product={product}
-                  decorative
-                  className="size-12 shrink-0 sm:size-16"
+                <Image
+                  src={product.image}
+                  alt=""
+                  width={64}
+                  height={64}
+                  className="size-12 shrink-0 rounded-full object-cover sm:size-16"
                 />
                 <div className="min-w-0 flex-1">
                   <label htmlFor={product.id} className="font-display text-sm">
                     {product.name}
                   </label>
-                  <p className="mt-1 text-xs text-olive/65">{product.unit}</p>
+                  <p className="mt-1 text-xs text-olive/65">
+                    {product.ingredients.join(" · ")}
+                  </p>
                 </div>
                 <div className="col-start-2 flex items-center gap-1">
                   <button
@@ -246,8 +250,7 @@ export function PickupForm() {
           </ul>
         )}
         <p className="mt-6 text-xs leading-relaxed text-olive/65">
-          Carta y formatos de ejemplo. Precios, disponibilidad y dirección de
-          recogida pendientes.
+          Precios, disponibilidad y dirección de recogida pendientes.
         </p>
         {summary && (
           <div
