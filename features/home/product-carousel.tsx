@@ -7,6 +7,8 @@ import { products } from "@/data/products";
 import { ProductCard } from "@/features/catalog/product-card";
 import { ArrowIcon } from "@/components/ui/icons";
 
+const featured = products.filter((product) => product.featured);
+
 export function ProductCarousel() {
   const root = useRef<HTMLElement>(null);
   const track = useRef<HTMLDivElement>(null);
@@ -83,7 +85,7 @@ export function ProductCarousel() {
       <div
         className="overflow-x-auto motion-safe:overflow-hidden"
         tabIndex={0}
-        aria-label="Productos de ejemplo. Consulta todos los detalles en la carta."
+        aria-label="Algunas de nuestras gildas. Consulta ingredientes y alérgenos en la carta."
       >
         <div
           ref={track}
@@ -98,15 +100,16 @@ export function ProductCarousel() {
               aria-hidden={copy === 1 || undefined}
               className={`flex shrink-0 gap-8 pr-8 md:gap-14 md:pr-14 ${copy === 1 ? "motion-reduce:hidden" : ""}`}
             >
-              {products.map((product) => (
+              {featured.map((product) => (
                 <div
                   key={product.id}
                   className="w-[72vw] max-w-90 shrink-0 md:w-80 lg:w-90"
                 >
                   <ProductCard
                     product={product}
-                    showIngredients={false}
+                    showDetails={false}
                     centered
+                    sizes="(min-width: 1024px) 22.5rem, (min-width: 768px) 20rem, 72vw"
                   />
                 </div>
               ))}

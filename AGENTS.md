@@ -33,7 +33,7 @@ Se trata de un proyecto para una empresa / tienda de alimentación (de gildas, a
 - Utilizar Tailwind CSS para los estilos; definir los tokens de marca en el tema y mantener el CSS global mínimo.
 - Organizar el código por responsabilidades: rutas en `app`, componentes compartidos en `components`, funcionalidades en `features` y contenido tipado en `data`.
 - La primera versión incluye portada, Carta, Conócenos y Reserva. Reserva significa pedidos para recoger en tienda.
-- Se autoriza una carta ficticia de ejemplo con dos gildas, dos aceitunas y un vermú. Identificarla como provisional; no inventar dirección, contacto, horarios ni historia de las fundadoras.
+- La carta es real: 20 gildas en `data/products.ts` (nombre, ingredientes y alérgenos según las fichas de la usuaria), con fotos en `public/images/gildas/`. Aceitunas y bebidas quedan fuera hasta tener fotos reales. No inventar dirección, contacto, horarios ni historia de las fundadoras.
 - Hasta conectar el envío de pedidos, el formulario solo prepara un resumen y nunca confirma una reserva real.
 
 ## Correcciones de diseño
@@ -56,6 +56,9 @@ Se trata de un proyecto para una empresa / tienda de alimentación (de gildas, a
 - Al comprobar el logo, validar también la carga real en móvil; se sirve el PNG original sin optimización dinámica para evitar la demora observada al generar tamaños nuevos.
 - En Next.js 16, si se usa desplazamiento suave global, añadir `data-scroll-behavior="smooth"` a `html` para que las transiciones de ruta restablezcan correctamente el desplazamiento.
 - Revisar formularios también a 320 px: los `fieldset` necesitan `min-w-0` y los controles de cantidad deben pasar a una segunda fila cuando el espacio es reducido.
+
+- Fotos de producto: usar siempre los originales limpios (`Gildas.zip`); las fichas con texto (`Gildas-guia.zip`) solo sirven para identificar cada gilda y sus datos. Solo se recorta una ficha cuando no existe original limpio. Las fotos se presentan cuadradas, con la gilda centrada y esquinas redondeadas, directamente sobre la albariza.
+- La ilustración SVG se mantiene solo en el hero de portada; en carta, carrusel y reserva se usan las fotos.
 
 ## Simplificación visual
 - En Carta, mostrar títulos de sección sin números ni frases auxiliares. No repetir la categoría encima de cada artículo.
