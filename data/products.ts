@@ -1,4 +1,5 @@
-export type Allergen = "pescado" | "lacteos" | "frutos-secos";
+// Denominaciones del anexo II del Reglamento (UE) 1169/2011.
+export type Allergen = "pescado" | "leche" | "frutos-de-cascara" | "moluscos";
 
 export type Product = {
   id: string;
@@ -12,8 +13,9 @@ export type Product = {
 
 export const allergenLabels: Record<Allergen, string> = {
   pescado: "Pescado",
-  lacteos: "Lácteos",
-  "frutos-secos": "Frutos secos",
+  leche: "Leche",
+  "frutos-de-cascara": "Frutos de cáscara",
+  moluscos: "Moluscos",
 };
 
 // Carta de gildas, en el orden de las fichas originales (01–20).
@@ -22,7 +24,7 @@ export const products: Product[] = [
     id: "la-bandolera",
     name: "La Bandolera",
     ingredients: ["Aceituna gordal", "Lomo", "Tomate seco", "Queso"],
-    allergens: ["lacteos"],
+    allergens: ["leche"],
     image: "/images/gildas/la-bandolera.jpg",
     featured: true,
   },
@@ -30,7 +32,7 @@ export const products: Product[] = [
     id: "la-coloraita",
     name: "La Coloraíta",
     ingredients: ["Aceituna gordal", "Tomate seco", "Anchoa", "Queso"],
-    allergens: ["pescado", "lacteos"],
+    allergens: ["pescado", "leche"],
     image: "/images/gildas/la-coloraita.jpg",
     featured: true,
   },
@@ -45,7 +47,7 @@ export const products: Product[] = [
     id: "la-caprichosa",
     name: "La Caprichosa",
     ingredients: ["Aceituna manzanilla", "Doble arándano", "Queso"],
-    allergens: ["lacteos"],
+    allergens: ["leche"],
     image: "/images/gildas/la-caprichosa.jpg",
     featured: true,
   },
@@ -53,7 +55,7 @@ export const products: Product[] = [
     id: "la-morenaza",
     name: "La Morenaza",
     ingredients: ["Aceituna manzanilla", "Ciruela pasa", "Piparra", "Queso"],
-    allergens: ["lacteos"],
+    allergens: ["leche"],
     image: "/images/gildas/la-morenaza.jpg",
   },
   {
@@ -66,7 +68,7 @@ export const products: Product[] = [
       "Queso",
       "Fuet",
     ],
-    allergens: ["lacteos"],
+    allergens: ["leche"],
     image: "/images/gildas/la-canalla.jpg",
     featured: true,
   },
@@ -74,14 +76,14 @@ export const products: Product[] = [
     id: "la-serrana",
     name: "La Serrana",
     ingredients: ["Aceituna gordal", "Cecina de León", "Queso"],
-    allergens: ["lacteos"],
+    allergens: ["leche"],
     image: "/images/gildas/la-serrana.jpg",
   },
   {
     id: "la-salinera",
     name: "La Salinera",
     ingredients: ["Aceituna gordal", "Mojama", "Queso", "Piparra"],
-    allergens: ["pescado", "lacteos"],
+    allergens: ["pescado", "leche"],
     image: "/images/gildas/la-salinera.jpg",
     featured: true,
   },
@@ -89,14 +91,14 @@ export const products: Product[] = [
     id: "la-sala",
     name: "La Salá",
     ingredients: ["Aceituna manzanilla", "Anchoa", "Piparra", "Queso"],
-    allergens: ["pescado", "lacteos"],
+    allergens: ["pescado", "leche"],
     image: "/images/gildas/la-sala.jpg",
   },
   {
     id: "la-melosa",
     name: "La Melosa",
     ingredients: ["Aceituna gordal", "Membrillo", "Piparra", "Queso"],
-    allergens: ["lacteos", "frutos-secos"],
+    allergens: ["leche", "frutos-de-cascara"],
     image: "/images/gildas/la-melosa.jpg",
   },
   {
@@ -109,7 +111,7 @@ export const products: Product[] = [
       "Pepinillo",
       "Tomate cherry",
     ],
-    allergens: ["pescado"],
+    allergens: ["moluscos"],
     image: "/images/gildas/la-tentacula.jpg",
     featured: true,
   },
@@ -129,7 +131,7 @@ export const products: Product[] = [
     id: "la-pecadora",
     name: "La Pecadora",
     ingredients: ["Aceituna manzanilla", "Dátil", "Piparra", "Queso", "Anchoa"],
-    allergens: ["lacteos", "pescado"],
+    allergens: ["leche", "pescado"],
     image: "/images/gildas/la-pecadora.jpg",
   },
   {
@@ -142,7 +144,7 @@ export const products: Product[] = [
       "Queso",
       "Piparra",
     ],
-    allergens: ["pescado", "lacteos"],
+    allergens: ["pescado", "leche"],
     image: "/images/gildas/la-platea.jpg",
   },
   {
@@ -154,7 +156,7 @@ export const products: Product[] = [
       "Salmón ahumado",
       "Cebollita",
     ],
-    allergens: ["pescado", "lacteos"],
+    allergens: ["pescado", "leche"],
     image: "/images/gildas/la-senorita.jpg",
   },
   {
@@ -167,7 +169,7 @@ export const products: Product[] = [
       "Tomate cherry",
       "Aceituna manzanilla",
     ],
-    allergens: ["pescado", "lacteos"],
+    allergens: ["pescado", "leche"],
     image: "/images/gildas/la-italiana.jpg",
     featured: true,
   },
@@ -181,7 +183,7 @@ export const products: Product[] = [
       "Sardina ahumada",
       "Tomate cherry",
     ],
-    allergens: ["pescado", "lacteos"],
+    allergens: ["pescado", "leche"],
     image: "/images/gildas/la-ahuma.jpg",
     featured: true,
   },
@@ -195,14 +197,14 @@ export const products: Product[] = [
       "Queso",
       "Pimiento del piquillo",
     ],
-    allergens: ["pescado", "lacteos"],
+    allergens: ["pescado", "leche"],
     image: "/images/gildas/la-mal-casa.jpg",
   },
   {
     id: "la-joya",
     name: "La Joya",
     ingredients: ["Aceituna gordal", "Mojama", "Queso", "Guinda"],
-    allergens: ["pescado", "lacteos"],
+    allergens: ["pescado", "leche"],
     image: "/images/gildas/la-joya.jpg",
     featured: true,
   },
@@ -215,7 +217,7 @@ export const products: Product[] = [
       "Piparra",
       "Queso",
     ],
-    allergens: ["lacteos", "frutos-secos"],
+    allergens: ["leche", "frutos-de-cascara"],
     image: "/images/gildas/la-frutera.jpg",
   },
 ];

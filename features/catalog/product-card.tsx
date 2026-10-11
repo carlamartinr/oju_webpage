@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { allergenLabels } from "@/data/products";
 import type { Product } from "@/data/products";
+import { AllergenIcon } from "@/components/ui/allergen-icon";
 
 export function ProductCard({
   product,
@@ -29,16 +30,14 @@ export function ProductCard({
         {showDetails && (
           <>
             <p className="mt-2 text-sm leading-relaxed text-olive/75">
-              {product.ingredients.join(" · ")}
+              {product.ingredients.join("\u00a0· ")}
             </p>
             <p className="sr-only">Alérgenos:</p>
-            <ul className="mt-4 flex flex-wrap gap-1.5">
+            <ul className="mt-4 flex flex-wrap gap-2">
               {product.allergens.map((allergen) => (
-                <li
-                  key={allergen}
-                  className="rounded-full border border-sea/30 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-sea"
-                >
-                  {allergenLabels[allergen]}
+                <li key={allergen} title={allergenLabels[allergen]}>
+                  <AllergenIcon allergen={allergen} />
+                  <span className="sr-only">{allergenLabels[allergen]}</span>
                 </li>
               ))}
             </ul>

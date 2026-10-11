@@ -79,8 +79,8 @@ El diseño de los productos como gildas o aceitunas será animado, no serán fot
 
 ## Fotografía de producto · octubre 2026
 - Carta, carrusel y reserva usan fotos reales de las gildas; el hero de portada mantiene la ilustración animada.
-- Fotos cuadradas (`public/images/gildas/<id>.jpg`), recortadas de los originales con la gilda centrada y aire alrededor, esquinas redondeadas (`rounded-2xl`) y un leve zoom al pasar el cursor (solo con movimiento permitido).
-- Cinco gildas sin original limpio (Caprichosa, Morenaza, Tentácula, Bien Casá, Frutera) y La Melosa usan la foto de la ficha, recortada para eliminar el texto.
-- Carta: una sección «Gildas» con 20 productos en el orden de las fichas, en rejilla de 1/2/4 columnas. Cada artículo muestra foto, nombre, ingredientes separados por «·» y alérgenos en pastillas azules. Sin numeración.
-- Carrusel: selección de nueve gildas (`featured`), solo foto y nombre.
-- Reserva: miniatura circular de la foto e ingredientes bajo el nombre.
+- Fotos cuadradas (`public/images/gildas/<id>.jpg`) recortadas de las fichas retocadas, entre el título y el texto de ingredientes, con la gilda centrada. Esquinas redondeadas (`rounded-2xl`) y un leve zoom al pasar el cursor (solo con movimiento permitido).
+- Se prefieren las fichas a los originales sin retocar: luz, color y encuadre más cuidados y homogéneos entre productos.
+- Carta: una sección «Gildas» con 20 productos en el orden de las fichas, en rejilla de 1/2/4 columnas. Cada artículo muestra foto, nombre, ingredientes separados por «·» y alérgenos como pictogramas circulares con sus colores habituales (`components/ui/allergen-icon.tsx`: pescado azul, leche marrón, frutos de cáscara rojo, moluscos turquesa), siempre con su nombre accesible y leyenda. Al final de la sección, leyenda «Alérgenos» con icono y significado, y aviso para consultar alergias. Sin numeración.
+- Carrusel: selección de nueve gildas variadas (`featured`), solo foto y nombre.
+- Reserva: miniatura circular de la foto, ingredientes y pictogramas de alérgenos bajo el nombre (en venta a distancia deben verse antes de completar el pedido).

@@ -57,7 +57,8 @@ Se trata de un proyecto para una empresa / tienda de alimentación (de gildas, a
 - En Next.js 16, si se usa desplazamiento suave global, añadir `data-scroll-behavior="smooth"` a `html` para que las transiciones de ruta restablezcan correctamente el desplazamiento.
 - Revisar formularios también a 320 px: los `fieldset` necesitan `min-w-0` y los controles de cantidad deben pasar a una segunda fila cuando el espacio es reducido.
 
-- Fotos de producto: usar siempre los originales limpios (`Gildas.zip`); las fichas con texto (`Gildas-guia.zip`) solo sirven para identificar cada gilda y sus datos. Solo se recorta una ficha cuando no existe original limpio. Las fotos se presentan cuadradas, con la gilda centrada y esquinas redondeadas, directamente sobre la albariza.
+- Fotos de producto: usar las fotos retocadas de las fichas (`Gildas-guia.zip`) recortadas en cuadrado sin el título ni el texto de ingredientes; se ven mejor y son homogéneas. Los originales de `Gildas.zip` se descartaron por el acabado menos cuidado. Fotos cuadradas, gilda centrada, esquinas redondeadas y directamente sobre la albariza.
+- Alérgenos: usar las denominaciones del anexo II del Reglamento (UE) 1169/2011 (Leche, no «Lácteos»; Frutos de cáscara, no «Frutos secos»; el pulpo es Moluscos, no Pescado). Los iconos siempre con leyenda y nombre accesible. No quitar ni añadir alérgenos sin confirmación de la marca: dependen de las etiquetas reales de cada proveedor.
 - La ilustración SVG se mantiene solo en el hero de portada; en carta, carrusel y reserva se usan las fotos.
 
 ## Simplificación visual
