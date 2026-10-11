@@ -10,7 +10,7 @@ export const metadata: Metadata = { title: "La carta" };
 export default function MenuPage() {
   return (
     <div className="mx-auto max-w-7xl px-6 pb-20 pt-12 md:px-12 md:pt-18">
-      <header className="mb-14 border-b border-olive/20 pb-10">
+      <header className="mb-20 md:mb-28">
         <p className="mb-5 text-[10px] uppercase tracking-[0.22em] text-sea">
           El aperitivo tiene su arte
         </p>
@@ -19,16 +19,12 @@ export default function MenuPage() {
           <br />
           pide el cuerpo?
         </h1>
-        <div className="mt-8 flex flex-wrap items-end justify-between gap-8">
-          <p className="max-w-md text-base leading-relaxed text-olive/75">
-            Veinte gildas, cada una con su gracia. Para picar una o para
-            probarlas todas.
-          </p>
-          <Wave className="h-6 w-24 text-sea" />
-        </div>
+        <Wave className="mt-10 h-6 w-24 text-sea" />
       </header>
       <section id="gildas" className="mb-20">
-        <h2 className="mb-10 text-4xl tracking-tight">Gildas</h2>
+        <h2 className="mb-12 text-4xl tracking-[-0.04em] text-sea md:text-5xl">
+          Nuestras Gildas
+        </h2>
         <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />

@@ -64,22 +64,17 @@ export function ProductCarousel() {
         data-reveal
         className="mb-6 flex flex-wrap items-end justify-between gap-6"
       >
-        <div>
-          <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.22em] text-sea">
-            Pequeños bocados. Grandes momentos.
-          </p>
-          <h2 className="text-4xl leading-tight tracking-[-0.045em] md:text-5xl">
-            Lo bueno,
-            <br />
-            para compartir.
-          </h2>
-        </div>
+        <h2 className="text-4xl leading-tight tracking-[-0.045em] md:text-5xl">
+          Lo bueno,
+          <br />
+          para compartir.
+        </h2>
         <Link
           href="/carta"
-          className="inline-flex items-center gap-6 border-b border-olive pb-2 text-sm font-semibold"
+          className="group inline-flex items-center gap-3 py-2 text-sm font-semibold decoration-1 underline-offset-[6px] hover:underline"
         >
           Toda la carta
-          <ArrowIcon />
+          <ArrowIcon className="size-5 transition-transform group-hover:translate-x-1" />
         </Link>
       </div>
       <div

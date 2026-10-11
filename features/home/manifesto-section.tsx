@@ -18,13 +18,6 @@ export function ManifestoSection() {
           <br />
           Más aperitivo.
         </h2>
-        <p
-          data-reveal
-          className="max-w-md text-sm leading-relaxed text-albariza/80"
-        >
-          Nos gustan las cosas sencillas: algo rico en la mesa, buena compañía y
-          un «quédate otro ratito».
-        </p>
         <div data-reveal>
           <ButtonLink href="/conocenos" light>
             Esto es Ojú

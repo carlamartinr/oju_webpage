@@ -118,7 +118,7 @@ export function PickupForm() {
                         ),
                       }));
                     }}
-                    className="size-11 rounded-full border border-olive/20 text-xl disabled:opacity-30"
+                    className="size-11 border border-olive/20 text-xl transition-colors hover:border-olive/60 disabled:opacity-30 disabled:hover:border-olive/20"
                   >
                     −
                   </button>
@@ -153,7 +153,7 @@ export function PickupForm() {
                         ),
                       }));
                     }}
-                    className="size-11 rounded-full border border-olive/20 text-xl disabled:opacity-30"
+                    className="size-11 border border-olive/20 text-xl transition-colors hover:border-olive/60 disabled:opacity-30 disabled:hover:border-olive/20"
                   >
                     +
                   </button>
@@ -230,10 +230,10 @@ export function PickupForm() {
         )}
         <button
           type="submit"
-          className="mt-8 inline-flex min-h-13 items-center gap-8 rounded-full border border-olive bg-olive px-7 py-3 text-sm font-bold text-albariza transition-colors hover:bg-transparent hover:text-olive"
+          className="group mt-8 inline-flex min-h-11 items-center gap-3 border border-olive bg-olive px-5 py-2.5 text-sm font-semibold text-albariza transition-colors hover:bg-transparent hover:text-olive"
         >
           Revisar mi selección
-          <ArrowIcon />
+          <ArrowIcon className="size-4 transition-transform group-hover:translate-x-0.5" />
         </button>
         <p className="mt-4 max-w-lg text-xs leading-relaxed text-olive/65">
           Esta demostración no envía ni guarda tus datos. Al salir de la página

@@ -46,7 +46,7 @@ export function Header() {
         role="img"
         aria-label="Carrito: compras online próximamente"
         title="Compras online próximamente"
-        className="flex size-8 shrink-0 sm:size-10 items-center justify-center rounded-full border border-olive/25 text-olive/55"
+        className="flex size-8 shrink-0 items-center justify-center text-olive/55 sm:size-10"
       >
         <BagIcon />
       </span>

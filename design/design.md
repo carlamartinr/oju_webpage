@@ -84,3 +84,12 @@ El diseño de los productos como gildas o aceitunas será animado, no serán fot
 - Carta: una sección «Gildas» con 20 productos en el orden de las fichas, en rejilla de 1/2/4 columnas. Cada artículo muestra foto, nombre, ingredientes separados por «·» y alérgenos como pictogramas circulares con sus colores habituales (`components/ui/allergen-icon.tsx`: pescado azul, leche marrón, frutos de cáscara rojo, moluscos turquesa), siempre con su nombre accesible y leyenda. Al final de la sección, leyenda «Alérgenos» con icono y significado, y aviso para consultar alergias. Sin numeración.
 - Carrusel: selección de nueve gildas variadas (`featured`), solo foto y nombre.
 - Reserva: miniatura circular de la foto, ingredientes y pictogramas de alérgenos bajo el nombre (en venta a distancia deben verse antes de completar el pedido).
+
+## Depuración de recursos «de plantilla» · octubre 2026
+- Hero: sin frase secundaria ni etiqueta con raya. Bajo el titular, solo «Olivas y gildas del sur.» en texto normal.
+- Carrusel: sin etiqueta superior. «Toda la carta →» sin subrayado; aparece al pasar el cursor, con un leve desplazamiento de la flecha.
+- «Menos prisa. Más aperitivo.»: sin párrafo de apoyo.
+- Botones (`ButtonLink`): rectangulares, contorno fino al 60 %, sin relleno; al pasar el cursor se rellenan (verde sobre albariza, albariza sobre verde). Compactos: texto y flecha juntos, sin hueco intermedio. El envío de Reserva es el único botón relleno. Controles de cantidad cuadrados. El carrito del header es solo el icono, sin círculo.
+- Dónde encontrarnos: titular «Dónde encontrarnos», con «Tu próxima buena parada» encima en cursiva azul ligeramente girada (mismo estilo que «¡Ojú, qué cosa más buena!»). Dirección y horario en dos columnas, sin líneas separadoras.
+- Hueco de foto (`PhotoPlaceholder`): rectángulo con esquinas `rounded-2xl` (como las fotos de producto), fondo verde al 6 % y el motivo de aceitunas; 4:3 en portada, 4:5 en Conócenos. Sin arco, borde ni logotipo de texto.
+- Carta: cabecera sin párrafo ni línea separadora. Etiqueta, titular «¿Qué te pide el cuerpo?» y la onda azul debajo, alineada a la izquierda con el titular. El título de sección «Nuestras Gildas» va grande y en azul de marca (`text-4xl`/`md:text-5xl`); los nombres de producto, más pequeños (`text-lg`/`md:text-xl`) y en verde, para que la jerarquía sea evidente.

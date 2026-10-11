@@ -67,4 +67,9 @@ Se trata de un proyecto para una empresa / tienda de alimentación (de gildas, a
 - El hero no lleva botón a Carta ni sello «Mucho sur. Mucho sabor.».
 - Eliminar del carrusel el texto «Una muestra de nuestra futura carta…».
 - Contacto debe ser explícito («Contacta con nosotros»), con fondo verde de marca y texto albariza.
+- Evitar recursos «de plantilla»: botones en píldora (`rounded-full`), frases de relleno bajo los titulares, guiones o rayas decorativas delante de etiquetas, filas de datos con separadores horizontales y tarjetas con arco.
+- Botones rectangulares, con contorno fino y sin relleno; se rellenan al pasar el cursor. Solo el envío del formulario va relleno, por ser la acción principal.
+- Los títulos de sección deben distinguirse claramente de los nombres de artículo (tamaño y color), nunca casi iguales.
+- Alinear los elementos decorativos (como la onda) con el texto al que acompañan; no dejarlos sueltos en el lado opuesto.
+- Los enlaces de texto («Toda la carta →») van sin subrayado; el subrayado aparece solo al pasar el cursor.
 - No utilizar soles como decoración. Reutilizar el motivo original de aceitunas que forma el punto de la j del logo.
