@@ -3,7 +3,11 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import type { FormEvent } from "react";
-import { products } from "@/data/products";
+import { allergenLabels, products } from "@/data/products";
+import {
+  AllergenIcon,
+  AllergenLegend,
+} from "@/components/ui/allergen-icon";
 import { ArrowIcon } from "@/components/ui/icons";
 import {
   localDate,
@@ -84,7 +88,18 @@ export function PickupForm() {
                     {product.name}
                   </label>
                   <p className="mt-1 text-xs text-olive/65">
-                    {product.ingredients.join(" · ")}
+                    {product.ingredients.join("\u00a0· ")}
+                  </p>
+                  <p className="mt-2 flex gap-1.5">
+                    <span className="sr-only">Alérgenos:</span>
+                    {product.allergens.map((allergen) => (
+                      <span key={allergen} title={allergenLabels[allergen]}>
+                        <AllergenIcon allergen={allergen} className="size-5" />
+                        <span className="sr-only">
+                          {allergenLabels[allergen]}
+                        </span>
+                      </span>
+                    ))}
                   </p>
                 </div>
                 <div className="col-start-2 flex items-center gap-1">
@@ -146,6 +161,7 @@ export function PickupForm() {
               </div>
             ))}
           </div>
+          <AllergenLegend className="mt-6" />
         </fieldset>
         <fieldset className="mt-12 min-w-0">
           <legend className="mb-6 font-display text-2xl tracking-tight">

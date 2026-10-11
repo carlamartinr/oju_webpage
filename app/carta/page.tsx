@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { products } from "@/data/products";
+import { AllergenLegend } from "@/components/ui/allergen-icon";
 import { ProductCard } from "@/features/catalog/product-card";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Wave } from "@/components/ui/icons";
@@ -33,9 +34,21 @@ export default function MenuPage() {
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
-        <p className="mt-14 max-w-xl text-xs leading-relaxed text-olive/65">
-          Si tienes alguna alergia o intolerancia, pregúntanos antes de pedir.
-        </p>
+        <aside
+          aria-labelledby="alergenos"
+          className="mt-16 border-t border-olive/20 pt-8"
+        >
+          <h3
+            id="alergenos"
+            className="text-[10px] font-semibold uppercase tracking-[0.22em] text-sea"
+          >
+            Alérgenos
+          </h3>
+          <AllergenLegend className="mt-5" />
+          <p className="mt-6 max-w-xl text-xs leading-relaxed text-olive/65">
+            Si tienes alguna alergia o intolerancia, pregúntanos antes de pedir.
+          </p>
+        </aside>
       </section>
       <div className="flex flex-col items-start justify-between gap-6 border-t border-olive/20 pt-10 sm:flex-row sm:items-center">
         <div>
