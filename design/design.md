@@ -50,7 +50,7 @@ El diseño de los productos como gildas o aceitunas será animado, no serán fot
 - Hero: la gilda se monta al entrar. Aparece el palillo y se deslizan los ingredientes de abajo arriba en secuencia solapada, con desaceleración suave y sin rebotes. El estado final permanece estable.
 - Las ilustraciones se apoyan directamente sobre albariza, sin tarjetas blancas ni fondos arqueados. Se conservan las líneas finas y la jerarquía de producto/ingredientes.
 - Logo original visible a la izquierda (120 px en escritorio / 80 px en móvil). Navegación a 18 px en escritorio y 14–16 px en móvil.
-- Las imágenes generadas de la primera exploración quedan archivadas en `public/images/products/`, pero ya no se usan en la interfaz. Los SVG vivos están en `components/illustrations/`.
+- Las imágenes generadas de la primera exploración se eliminaron. Los SVG vivos están en `components/illustrations/`.
 
 ## Revisión de jerarquía y marca
 - Carta: encabezados de categoría sin numeración ni frases laterales; artículos con nombre e ingredientes, sin repetir la categoría.
