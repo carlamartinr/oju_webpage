@@ -102,3 +102,9 @@ El diseño de los productos como gildas o aceitunas será animado, no serán fot
 - Dónde encontrarnos: titular «Dónde encontrarnos», con «Tu próxima buena parada» encima en cursiva azul ligeramente girada (mismo estilo que «¡Ojú, qué cosa más buena!»). Dirección y horario en dos columnas, sin líneas separadoras.
 - Hueco de foto (`PhotoPlaceholder`): rectángulo con esquinas `rounded-2xl` (como las fotos de producto), fondo verde al 6 % y el motivo de aceitunas; 4:3 en portada, 4:5 en Conócenos. Sin arco, borde ni logotipo de texto.
 - Carta: cabecera sin párrafo ni línea separadora. Etiqueta, titular «¿Qué te pide el cuerpo?» y la onda azul debajo, alineada a la izquierda con el titular. El título de sección «Nuestras Gildas» va grande y en azul de marca (`text-4xl`/`md:text-5xl`); los nombres de producto, más pequeños (`text-lg`/`md:text-xl`) y en verde, para que la jerarquía sea evidente.
+
+## Conócenos con historia real · octubre 2026
+
+- Texto real de la marca («Nuestra historia, nuestra esencia»), sin reescribir su contenido; solo se corrigen mayúsculas y signos («Ojú», «¡Ojú!», «Pruébalas»).
+- Estructura: titular «Nuestra historia, nuestra esencia.»; foto de fundadoras (hueco pendiente) a la izquierda con el origen («Dos décadas entre aceitunas.»); banda azul «Y así nació Ojú.» con el significado del nombre y la filosofía junto al motivo de aceitunas; cierre centrado «Dos mujeres, una historia compartida y un sueño por cumplir.», invitación, «Pruébalas y entenderás por qué decimos ¡Ojú!» en cursiva azul girada y botón a Carta.
+- Se elimina el aviso provisional sobre la historia de las fundadoras.
