@@ -106,11 +106,8 @@ export function Hero() {
               se come
               <br />a <span className="text-sea">bocados</span>
             </h1>
-            <p
-              data-hero-copy
-              className="mt-8 text-lg text-olive/75 md:text-xl"
-            >
-              Olivas y gildas del sur.
+            <p data-hero-copy className="mt-8 text-lg text-olive/75 md:text-xl">
+              Gildas y aceitunas del sur.
             </p>
           </div>
           <div className="relative mx-auto w-full max-w-145 py-6 md:py-0">

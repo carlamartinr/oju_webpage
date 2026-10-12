@@ -8,7 +8,7 @@ export function Footer() {
         <Link href="/" className="font-display text-xl">
           Ojú
           <span className="ml-4 font-sans text-xs font-normal">
-            Olivas y gildas del sur.
+            Gildas y aceitunas del sur.
           </span>
         </Link>
         <Wave className="h-4 w-16 text-sea" />
