@@ -4,7 +4,7 @@ import { Footer } from "@/components/layout/footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: { default: "Ojú | Olivas y gildas del sur", template: "%s | Ojú" },
+  title: { default: "Ojú | Gildas y Aceitunas del sur", template: "%s | Ojú" },
   description:
     "El sur se come a bocados. Gildas, aceitunas y aperitivos con acento andaluz. Descubre el universo Ojú.",
 };
