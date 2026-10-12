@@ -33,7 +33,7 @@ Se trata de un proyecto para una empresa / tienda de alimentación (de gildas, a
 - Utilizar Tailwind CSS para los estilos; definir los tokens de marca en el tema y mantener el CSS global mínimo.
 - Organizar el código por responsabilidades: rutas en `app`, componentes compartidos en `components`, funcionalidades en `features` y contenido tipado en `data`.
 - La primera versión incluye portada, Carta, Conócenos y Reserva. Reserva significa pedidos para recoger en tienda.
-- La carta es real: 20 gildas en `data/products.ts` (nombre, ingredientes y alérgenos según las fichas de la usuaria), con fotos en `public/images/gildas/`. Aceitunas y bebidas quedan fuera hasta tener fotos reales. No inventar dirección, contacto, horarios ni historia de las fundadoras.
+- La carta es real: 20 gildas en `data/products.ts` (nombre, ingredientes y alérgenos según las fichas de la usuaria), con fotos en `public/images/gildas/`. Aceitunas y bebidas quedan fuera hasta tener fotos reales. No inventar dirección, contacto ni horarios. La historia de Conócenos es el texto real de la marca: no reescribir su contenido, solo corregir ortografía y escribir siempre «Ojú» (no «OJÚ»).
 - Hasta conectar el envío de pedidos, el formulario solo prepara un resumen y nunca confirma una reserva real.
 
 ## Correcciones de diseño
