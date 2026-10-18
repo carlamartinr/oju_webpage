@@ -16,14 +16,35 @@ export function ContactSection() {
           </h2>
         </div>
         <div className="flex items-center justify-between gap-8">
-          <dl className="flex-1 text-sm">
-            <div className="border-b border-albariza/25 py-5">
+          <dl className="flex-1 space-y-6 text-sm">
+            <div>
               <dt className="mb-2 font-semibold">Teléfono</dt>
-              <dd className="text-albariza/85">Próximamente</dd>
+              <dd>
+                <a className="text-albariza/85 hover:underline" href="tel:+34616232057">
+                  616 232 057
+                </a>
+              </dd>
             </div>
-            <div className="py-5">
+            <div>
               <dt className="mb-2 font-semibold">Correo electrónico</dt>
-              <dd className="text-albariza/85">Próximamente</dd>
+              <dd>
+                <a className="break-all text-albariza/85 hover:underline" href="mailto:info@ojugildas.com">
+                  info@ojugildas.com
+                </a>
+              </dd>
+            </div>
+            <div>
+              <dt className="mb-2 font-semibold">Instagram</dt>
+              <dd>
+                <a
+                  className="text-albariza/85 hover:underline"
+                  href="https://www.instagram.com/ojugildas/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  @ojugildas
+                </a>
+              </dd>
             </div>
           </dl>
           <LogoOlives className="hidden size-24 lg:block" />

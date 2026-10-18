@@ -266,7 +266,8 @@ export function PickupForm() {
           </ul>
         )}
         <p className="mt-6 text-xs leading-relaxed text-olive/65">
-          Precios, disponibilidad y dirección de recogida pendientes.
+          Recogida prevista en Calle Pozo Amarguillo, 15–17, Sanlúcar de
+          Barrameda (Cádiz). Precios y disponibilidad pendientes de confirmar.
         </p>
         {summary && (
           <div

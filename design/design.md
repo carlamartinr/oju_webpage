@@ -47,7 +47,7 @@ El diseño de los productos como gildas o aceitunas será animado, no serán fot
 - Carrito presentado como futura funcionalidad, sin acción de compra ficticia.
 - Carta provisional autorizada: La clásica, La salerosa, Al limón, Aliño del sur y Vermú de la casa. Los ingredientes y formatos son de ejemplo, sin precios ni disponibilidad inventados.
 - Datos del local, contacto y fotografías reales pendientes; no se inventarán personas, dirección, horarios ni historia.
-- Reserva es recogida de productos. Primera versión: selección y resumen local sin envío, pago, almacenamiento ni confirmación real.
+- El formulario experimental de Reserva preparaba una selección y un resumen local sin envío, pago, almacenamiento ni confirmación real; se conserva fuera de la página pública.
 
 ## Revisión de ilustración y movimiento
 
@@ -97,6 +97,7 @@ El diseño de los productos como gildas o aceitunas será animado, no serán fot
 
 - Hero: sin frase secundaria ni etiqueta con raya. Bajo el titular, solo «Gildas y aceitunas del sur.» en texto normal.
 - Carrusel: sin etiqueta superior. «Toda la carta →» sin subrayado; aparece al pasar el cursor, con un leve desplazamiento de la flecha.
+- El titular del carrusel es «¿Cuál es la tuya?»: invita a explorar las gildas y se mantiene en una sola línea desde 320 px. En móvil baja a 30 px para conservar la composición.
 - «Menos prisa. Más aperitivo.»: sin párrafo de apoyo.
 - Botones (`ButtonLink`): rectangulares, contorno fino al 60 %, sin relleno; al pasar el cursor se rellenan (verde sobre albariza, albariza sobre verde). Compactos: texto y flecha juntos, sin hueco intermedio. El envío de Reserva es el único botón relleno. Controles de cantidad cuadrados. El carrito del header es solo el icono, sin círculo.
 - Dónde encontrarnos: titular «Dónde encontrarnos», con «Tu próxima buena parada» encima en cursiva azul ligeramente girada (mismo estilo que «¡Ojú, qué cosa más buena!»). Dirección y horario en dos columnas, sin líneas separadoras.
@@ -106,5 +107,27 @@ El diseño de los productos como gildas o aceitunas será animado, no serán fot
 ## Conócenos con historia real · octubre 2026
 
 - Texto real de la marca («Nuestra historia, nuestra esencia»), sin reescribir su contenido; solo se corrigen mayúsculas y signos («Ojú», «¡Ojú!», «Pruébalas»).
-- Estructura: titular «Nuestra historia, nuestra esencia.»; foto de fundadoras (hueco pendiente) a la izquierda con el origen («Dos décadas entre aceitunas.»); banda azul «Y así nació Ojú.» con el significado del nombre y la filosofía junto al motivo de aceitunas; cierre centrado «Dos mujeres, una historia compartida y un sueño por cumplir.», invitación, «Pruébalas y entenderás por qué decimos ¡Ojú!» en cursiva azul girada y botón a Carta.
+- Estructura: titular «Nuestra historia, nuestra esencia.»; foto real de varias gildas Ojú preparadas a la izquierda con el origen («Dos décadas entre aceitunas.»); banda azul «Y así nació Ojú.» con el significado del nombre y la filosofía junto al motivo de aceitunas; cierre centrado «Dos mujeres, una historia compartida y un sueño por cumplir.», invitación, «Pruébalas y entenderás por qué decimos ¡Ojú!» en cursiva azul girada y botón a Carta.
+- La imagen de Conócenos procede de `Gildas Belén-233.jpg`, optimizada a 1200 × 1800 px y presentada en 4:5. Muestra variedad y elaboración real sin repetir el logotipo ni usar un retrato de las fundadoras.
 - Se elimina el aviso provisional sobre la historia de las fundadoras.
+
+## Logo vectorial · octubre 2026
+
+- Versiones vectoriales para imprenta (toldos, carteles) en `design/logo/`: `oju-solo`, `oju-gildas-y-aceitunas` y `oju-gildas-y-aceitunas-sin-onda` (sin la onda azul), en PDF y SVG. Calcadas con potrace desde las exportaciones de Canva de 6250 px (los PDF de Canva solo contenían una imagen), con fondo transparente y colores planos de marca (verde #152D0B, azul #0D3866 en la onda).
+- En la versión con lema, el texto y la onda se centran en el eje de «Ojú»; en el diseño de Canva el lema estaba desplazado un 7 % a la derecha.
+- El texto del lema va convertido en trazados, no es editable.
+
+## Datos de contacto · octubre 2026
+
+- Dirección pública: Calle Pozo Amarguillo, 15–17, Sanlúcar de Barrameda (Cádiz). El nombre oficial de la calle lleva «u» en «Amarguillo».
+- Teléfono: 616 232 057. Correo: info@ojugildas.com. En la portada ambos son enlaces directos para llamar o escribir; la dirección enlaza a mapas.
+- Instagram: @ojugildas como tercer dato en Contacto. No incluir su enlace en el pie ni en el menú principal.
+- El horario, los precios y la disponibilidad siguen pendientes de confirmar. El formulario experimental conserva una dirección orientativa de recogida, pero la página pública no anuncia una modalidad de entrega concreta.
+- En el hueco de la foto del local de la portada, mostrar solo «Próximamente» hasta disponer de la fotografía.
+
+## Alcance público de la primera versión · octubre 2026
+
+- Publicar portada, Carta, Conócenos y Reserva. La ruta `/reserva` es una página editorial de contacto para pedidos por WhatsApp al 616 232 057, con icono y número visibles; no muestra el formulario ni permite pedir dentro de la web.
+- Recuperar el enlace Reserva en el menú y «Hacer un pedido» desde Carta. Conservar el formulario de recogida en `features/reservations/` para más adelante y mantener oculto el carrito inactivo.
+- Reserva mantiene el fondo albariza del resto de la web. «Pide tu aperitivo» ocupa la anchura como único titular, sin punto final y con «aperitivo» en azul de marca; debajo se alinean una explicación breve y la única acción, icono de WhatsApp más número 616 232 057. En móvil se apilan. Sin etiqueta superior, segundo titular, onda ni enlace secundario. No prometer solo recogida: también puede haber reparto a domicilio.
+- La sección de Reserva se extiende lo suficiente para que el pie no aparezca antes de desplazarse. El contenido queda centrado algo más abajo, con espaciado vertical equilibrado. Sin hojas decorativas: no aportaban a esta composición.

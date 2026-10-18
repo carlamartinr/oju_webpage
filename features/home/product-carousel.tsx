@@ -64,10 +64,8 @@ export function ProductCarousel() {
         data-reveal
         className="mb-6 flex flex-wrap items-end justify-between gap-6"
       >
-        <h2 className="text-4xl leading-tight tracking-[-0.045em] md:text-5xl">
-          Lo bueno,
-          <br />
-          para compartir.
+        <h2 className="whitespace-nowrap text-3xl leading-tight tracking-[-0.045em] md:text-5xl">
+          ¿Cuál es la tuya?
         </h2>
         <Link
           href="/carta"
@@ -95,7 +93,7 @@ export function ProductCarousel() {
               aria-hidden={copy === 1 || undefined}
               className={`flex shrink-0 gap-8 pr-8 md:gap-14 md:pr-14 ${copy === 1 ? "motion-reduce:hidden" : ""}`}
             >
-              {featured.map((product) => (
+              {featured.map((product, index) => (
                 <div
                   key={product.id}
                   className="w-[72vw] max-w-90 shrink-0 md:w-80 lg:w-90"
@@ -104,6 +102,7 @@ export function ProductCarousel() {
                     product={product}
                     showDetails={false}
                     centered
+                    loading={copy === 0 && index < 2 ? "eager" : "lazy"}
                     sizes="(min-width: 1024px) 22.5rem, (min-width: 768px) 20rem, 72vw"
                   />
                 </div>

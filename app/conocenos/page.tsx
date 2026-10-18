@@ -1,10 +1,14 @@
 import { LogoOlives } from "@/components/ui/logo-olives";
-import type { Metadata } from "next";
-import { PhotoPlaceholder } from "@/components/ui/photo-placeholder";
+import { pageMetadata } from "@/data/site";
+import Image from "next/image";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Wave } from "@/components/ui/icons";
 
-export const metadata: Metadata = { title: "Conócenos" };
+export const metadata = pageMetadata(
+  "Nuestra historia",
+  "Conoce la historia de Ojú: dos mujeres, más de veinte años de experiencia compartida y gildas con esencia gaditana.",
+  "/conocenos",
+);
 
 export default function AboutPage() {
   return (
@@ -18,10 +22,16 @@ export default function AboutPage() {
           <br />nuestra esencia.
         </h1>
         <div className="mt-16 grid items-center gap-12 md:grid-cols-2 md:gap-20">
-          <PhotoPlaceholder
-            label="Aquí conocerás a nuestras fundadoras"
-            kind="people"
-          />
+          <div className="relative aspect-4/5 overflow-hidden rounded-2xl">
+            <Image
+              src="/images/conocenos-gildas.jpg"
+              alt="Bandejas de gildas Ojú preparadas con distintas combinaciones de aceitunas e ingredientes"
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover object-center"
+              loading="eager"
+            />
+          </div>
           <div>
             <Wave className="mb-7 h-6 w-24 text-sea" />
             <h2 className="text-4xl leading-tight tracking-tight">

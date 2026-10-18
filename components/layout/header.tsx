@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BagIcon } from "@/components/ui/icons";
 
 const links = [
   { href: "/carta", label: "Carta" },
@@ -19,8 +18,8 @@ export function Header() {
         <Image
           src="/oju.png"
           alt="Ojú"
-          width={120}
-          height={93}
+          width={1429}
+          height={1101}
           className="block h-auto w-20 sm:w-25 md:w-30"
           sizes="(max-width: 639px) 80px, (max-width: 767px) 100px, 120px"
           unoptimized
@@ -42,14 +41,6 @@ export function Header() {
           </Link>
         ))}
       </nav>
-      <span
-        role="img"
-        aria-label="Carrito: compras online próximamente"
-        title="Compras online próximamente"
-        className="flex size-8 shrink-0 items-center justify-center text-olive/55 sm:size-10"
-      >
-        <BagIcon />
-      </span>
     </header>
   );
 }

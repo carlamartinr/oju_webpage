@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
+import { site } from "@/data/site";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: { default: "Ojú | Gildas y Aceitunas del sur", template: "%s | Ojú" },
-  description:
-    "El sur se come a bocados. Gildas, aceitunas y aperitivos con acento andaluz. Descubre el universo Ojú.",
+  metadataBase: new URL(site.url),
+  title: { default: `${site.title} | ${site.name}`, template: "%s | Ojú" },
+  description: site.description,
 };
 
 export default function RootLayout({

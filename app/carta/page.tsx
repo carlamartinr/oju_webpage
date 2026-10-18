@@ -1,11 +1,15 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/data/site";
 import { products } from "@/data/products";
 import { AllergenLegend } from "@/components/ui/allergen-icon";
 import { ProductCard } from "@/features/catalog/product-card";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Wave } from "@/components/ui/icons";
 
-export const metadata: Metadata = { title: "La carta" };
+export const metadata = pageMetadata(
+  "Carta de gildas",
+  "Consulta las 20 gildas de Ojú: fotos, ingredientes y alérgenos para elegir tu aperitivo en Sanlúcar de Barrameda.",
+  "/carta",
+);
 
 export default function MenuPage() {
   return (
@@ -26,8 +30,12 @@ export default function MenuPage() {
           Nuestras Gildas
         </h2>
         <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
+          {products.map((product, index) => (
+            <ProductCard
+              key={product.id}
+              product={product}
+              loading={index < 2 ? "eager" : "lazy"}
+            />
           ))}
         </div>
         <aside
@@ -47,13 +55,8 @@ export default function MenuPage() {
         </aside>
       </section>
       <div className="flex flex-col items-start justify-between gap-6 border-t border-olive/20 pt-10 sm:flex-row sm:items-center">
-        <div>
-          <h2 className="text-2xl">El aperitivo, contigo.</h2>
-          <p className="mt-2 text-sm text-olive/75">
-            Prueba cómo preparar tu selección para recoger.
-          </p>
-        </div>
-        <ButtonLink href="/reserva">Preparar recogida</ButtonLink>
+        <h2 className="text-2xl">¿Ya tienes tus favoritas?</h2>
+        <ButtonLink href="/reserva">Hacer un pedido</ButtonLink>
       </div>
     </div>
   );

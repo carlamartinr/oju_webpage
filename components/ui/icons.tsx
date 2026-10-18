@@ -35,6 +35,25 @@ export function BagIcon({ className = "size-5", ...props }: IconProps) {
   );
 }
 
+export function WhatsAppIcon({ className = "size-5", ...props }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+      {...props}
+    >
+      <path d="M20 11.5a8 8 0 0 1-11.8 7L4 19.8l1.3-4.2A8 8 0 1 1 20 11.5Z" />
+      <path d="M8.3 7.8c-.3.4-.4.9-.2 1.4a10 10 0 0 0 6.7 6.7c.5.2 1 .1 1.4-.2l.8-.8-2.6-1.3-1 1a8.4 8.4 0 0 1-4-4l1-1-1.3-2.6-.8.8Z" />
+    </svg>
+  );
+}
+
 export function Wave({ className = "h-5 w-20", ...props }: IconProps) {
   return (
     <svg

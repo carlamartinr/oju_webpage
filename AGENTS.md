@@ -32,7 +32,7 @@ Se trata de un proyecto para una empresa / tienda de alimentación (de gildas, a
 ## Decisiones de implementación
 - Utilizar Tailwind CSS para los estilos; definir los tokens de marca en el tema y mantener el CSS global mínimo.
 - Organizar el código por responsabilidades: rutas en `app`, componentes compartidos en `components`, funcionalidades en `features` y contenido tipado en `data`.
-- La primera versión incluye portada, Carta, Conócenos y Reserva. Reserva significa pedidos para recoger en tienda.
+- La primera versión pública incluye portada, Carta, Conócenos y una página de Reserva para pedidos por WhatsApp al 616 232 057. El formulario de recogida sigue en desarrollo y no debe exponerse públicamente.
 - La carta es real: 20 gildas en `data/products.ts` (nombre, ingredientes y alérgenos según las fichas de la usuaria), con fotos en `public/images/gildas/`. Aceitunas y bebidas quedan fuera hasta tener fotos reales. No inventar dirección, contacto ni horarios. La historia de Conócenos es el texto real de la marca: no reescribir su contenido, solo corregir ortografía y escribir siempre «Ojú» (no «OJÚ»).
 - Hasta conectar el envío de pedidos, el formulario solo prepara un resumen y nunca confirma una reserva real.
 
@@ -69,8 +69,20 @@ Se trata de un proyecto para una empresa / tienda de alimentación (de gildas, a
 - Eliminar del carrusel el texto «Una muestra de nuestra futura carta…».
 - Contacto debe ser explícito («Contacta con nosotros»), con fondo verde de marca y texto albariza.
 - Evitar recursos «de plantilla»: botones en píldora (`rounded-full`), frases de relleno bajo los titulares, guiones o rayas decorativas delante de etiquetas, filas de datos con separadores horizontales y tarjetas con arco.
-- Botones rectangulares, con contorno fino y sin relleno; se rellenan al pasar el cursor. Solo el envío del formulario va relleno, por ser la acción principal.
+- Botones rectangulares, con contorno fino y sin relleno; se rellenan al pasar el cursor. Cuando se active el formulario de recogida, su envío irá relleno por ser la acción principal.
 - Los títulos de sección deben distinguirse claramente de los nombres de artículo (tamaño y color), nunca casi iguales.
 - Alinear los elementos decorativos (como la onda) con el texto al que acompañan; no dejarlos sueltos en el lado opuesto.
 - Los enlaces de texto («Toda la carta →») van sin subrayado; el subrayado aparece solo al pasar el cursor.
 - No utilizar soles como decoración. Reutilizar el motivo original de aceitunas que forma el punto de la j del logo.
+
+## Lecciones de la primera versión publicable
+- Para el PNG del logo, declarar en `next/image` sus dimensiones intrínsecas reales (1429 × 1101) y dejar que CSS ajuste el ancho con altura automática; dimensiones aproximadas pueden provocar el aviso de proporciones de Next.js.
+- La calle facilitada como «Pozo Amargillo» figura en el callejero como «Pozo Amarguillo». Mostrar la dirección como «Calle Pozo Amarguillo, 15–17, Sanlúcar de Barrameda (Cádiz)» y conservar sin inventar los datos de contacto proporcionados por la marca.
+- En Conócenos, usar la foto real `Gildas Belén-233.jpg` de varias gildas preparadas, en formato vertical 4:5; no mostrar una foto de las fundadoras ni repetir el logotipo en ese hueco.
+- Instagram de la marca: @ojugildas. Mostrar el enlace solo junto al teléfono y correo en Contacto; no añadirlo al pie ni al menú principal.
+- El hueco de la foto del local en portada debe decir solo «Próximamente»; evitar textos que describan el lugar donde irá la foto.
+- El carrusel de portada lleva el titular «¿Cuál es la tuya?» en una sola línea también a 320 px; no volver a «Lo bueno, para compartir» ni forzar un salto de línea.
+- Reserva pública debe tener una composición sencilla y protagonista: un titular, un texto breve y un solo enlace al 616 232 057 por WhatsApp. En el botón, mostrar icono y número sin repetir la palabra «WhatsApp»; evitar segundo titular, onda y enlace secundario.
+- Reserva mantiene el fondo albariza, sin bloque verde. Eliminar la etiqueta «Pedidos para recoger» y no indicar que el pedido deba recogerse en tienda: la marca también podría repartirlo. Componer el título a ancho completo y situar debajo texto y botón.
+- En Reserva, titular «Pide tu aperitivo» sin punto. La primera pantalla no debe mostrar el footer; centrar el contenido más abajo con espaciado equilibrado y no añadir hojas decorativas.
+- Reserva pública enlaza al WhatsApp del 616 232 057 y explica que los pedidos se acuerdan por ese canal. Mantener el formulario de prueba en `features/reservations/` sin mostrarlo; no reintroducir el carrito inactivo.

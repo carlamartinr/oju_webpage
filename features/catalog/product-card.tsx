@@ -7,11 +7,13 @@ export function ProductCard({
   product,
   showDetails = true,
   centered = false,
+  loading,
   sizes = "(min-width: 1024px) 18rem, (min-width: 640px) 45vw, 90vw",
 }: {
   product: Product;
   showDetails?: boolean;
   centered?: boolean;
+  loading?: "eager" | "lazy";
   sizes?: string;
 }) {
   return (
@@ -21,6 +23,7 @@ export function ProductCard({
           src={product.image}
           alt={`Gilda ${product.name}`}
           fill
+          loading={loading}
           sizes={sizes}
           className="object-cover transition-transform duration-700 ease-out motion-safe:group-hover:scale-[1.04]"
         />
