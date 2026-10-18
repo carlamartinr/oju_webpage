@@ -15,7 +15,7 @@ export default function AboutPage() {
     <>
       <section className="mx-auto max-w-7xl px-6 pb-16 pt-12 md:px-12 md:pt-18">
         <p className="mb-5 text-[10px] uppercase tracking-[0.22em] text-sea">
-          Mucho gusto. Somos Ojú.
+          Mucho gusto, somos Ojú
         </p>
         <h1 className="max-w-4xl text-5xl leading-[1.05] tracking-[-0.05em] sm:text-6xl md:text-8xl">
           Nuestra historia,

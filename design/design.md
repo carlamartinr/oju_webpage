@@ -102,7 +102,7 @@ El diseño de los productos como gildas o aceitunas será animado, no serán fot
 - Botones (`ButtonLink`): rectangulares, contorno fino al 60 %, sin relleno; al pasar el cursor se rellenan (verde sobre albariza, albariza sobre verde). Compactos: texto y flecha juntos, sin hueco intermedio. El envío de Reserva es el único botón relleno. Controles de cantidad cuadrados. El carrito del header es solo el icono, sin círculo.
 - Dónde encontrarnos: titular «Dónde encontrarnos», con «Tu próxima buena parada» encima en cursiva azul recta, sin girar. Dirección y horario en dos columnas, sin líneas separadoras.
 - Hueco de foto (`PhotoPlaceholder`): rectángulo con esquinas `rounded-2xl` (como las fotos de producto), fondo verde al 6 % y el motivo de aceitunas; 4:3 en portada, 4:5 en Conócenos. Sin arco, borde ni logotipo de texto.
-- Carta: cabecera sin etiqueta superior, párrafo ni línea separadora. Titular «¿Qué te pide el cuerpo?» y la onda azul debajo, alineada a la izquierda con el titular. El título de sección «Nuestras Gildas» va grande y en azul de marca (`text-4xl`/`md:text-5xl`); los nombres de producto, más pequeños (`text-lg`/`md:text-xl`) y en verde, para que la jerarquía sea evidente.
+- Carta: cabecera sin párrafo ni línea separadora. Etiqueta «20 gildas, ninguna igual» (el número sale de la carta), titular «¿Qué te pide el cuerpo?» y la onda azul debajo, alineada a la izquierda con el titular. El título de sección «Nuestras Gildas» va grande y en azul de marca (`text-4xl`/`md:text-5xl`); los nombres de producto, más pequeños (`text-lg`/`md:text-xl`) y en verde, para que la jerarquía sea evidente.
 
 ## Conócenos con historia real · octubre 2026
 
