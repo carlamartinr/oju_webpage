@@ -12,14 +12,14 @@ export function pageMetadata(title: string, description: string, path: string): 
   const url = new URL(path, site.url).href;
   const socialTitle = `${title} | ${site.name}`;
   const image = {
-    url: `${site.url}/images/conocenos-gildas.jpg`,
+    url: `${site.url}/opengraph-image`,
     width: 1200,
-    height: 1800,
+    height: 630,
     alt: "Gildas Ojú preparadas con distintas combinaciones de ingredientes",
   };
 
   return {
-    title,
+    title: { absolute: socialTitle },
     description,
     alternates: { canonical: url },
     openGraph: {

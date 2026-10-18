@@ -131,3 +131,10 @@ El diseño de los productos como gildas o aceitunas será animado, no serán fot
 - Recuperar el enlace Reserva en el menú y «Hacer un pedido» desde Carta. Conservar el formulario de recogida en `features/reservations/` para más adelante y mantener oculto el carrito inactivo.
 - Reserva mantiene el fondo albariza del resto de la web. «Pide tu aperitivo» ocupa la anchura como único titular, sin punto final y con «aperitivo» en azul de marca; debajo se alinean una explicación breve y la única acción, icono de WhatsApp más número 616 232 057. En móvil se apilan. Sin etiqueta superior, segundo titular, onda ni enlace secundario. No prometer solo recogida: también puede haber reparto a domicilio.
 - La sección de Reserva se extiende lo suficiente para que el pie no aparezca antes de desplazarse. El contenido queda centrado algo más abajo, con espaciado vertical equilibrado. Sin hojas decorativas: no aportaban a esta composición.
+
+## Identidad en buscadores y enlaces compartidos · octubre 2026
+
+- Títulos y descripciones específicos por página, con el nombre Ojú y contexto local de Sanlúcar de Barrameda. Dominio canónico: `https://ojugildas.com`.
+- Imagen social horizontal de 1200 × 630: logo original sobre albariza a la izquierda y fotografía real de gildas a la derecha. Se genera durante la compilación y no requiere servidor ni servicios externos.
+- Favicon basado en la versión vectorial del logo real de `design/logo/oju-solo.svg`, sustituyendo la letra provisional.
+- Datos estructurados del negocio limitados a dirección, contacto e identidad ya confirmados; sin precios, horarios ni valoraciones inventados.

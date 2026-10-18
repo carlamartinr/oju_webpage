@@ -86,3 +86,10 @@ Se trata de un proyecto para una empresa / tienda de alimentación (de gildas, a
 - Reserva mantiene el fondo albariza, sin bloque verde. Eliminar la etiqueta «Pedidos para recoger» y no indicar que el pedido deba recogerse en tienda: la marca también podría repartirlo. Componer el título a ancho completo y situar debajo texto y botón.
 - En Reserva, titular «Pide tu aperitivo» sin punto. La primera pantalla no debe mostrar el footer; centrar el contenido más abajo con espaciado equilibrado y no añadir hojas decorativas.
 - Reserva pública enlaza al WhatsApp del 616 232 057 y explica que los pedidos se acuerdan por ese canal. Mantener el formulario de prueba en `features/reservations/` sin mostrarlo; no reintroducir el carrito inactivo.
+
+## Publicación estática y SEO
+- El dominio canónico confirmado es `https://ojugildas.com`; metadatos y sitemap lo comparten desde `data/site.ts`.
+- Cloudflare Pages publica `out/` con `output: "export"` e imágenes locales sin optimizador de servidor. Ejecutar `npm run build` (no solo `next build`): `postbuild` genera la CSP con hashes de los scripts exportados y respeta el límite de 2000 caracteres por línea de `_headers`.
+- Mantener las cabeceras en `public/_headers`, incluyendo `noindex` para dominios `pages.dev`. No usar nonces fijos ni habilitar JavaScript inline indiscriminadamente. GSAP necesita estilos inline.
+- Los originales de imprenta van fuera de `public/` (en `design/source-assets/`); todo lo que se guarda en `public/` se publica.
+- Verificar instalación reproducible y auditoría separando producción y desarrollo; no degradar ESLint ni usar `npm audit fix --force` para ocultar una vulnerabilidad transitiva sin parche.
