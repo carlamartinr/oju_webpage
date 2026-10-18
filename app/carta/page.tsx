@@ -15,9 +15,6 @@ export default function MenuPage() {
   return (
     <div className="mx-auto max-w-7xl px-6 pb-20 pt-12 md:px-12 md:pt-18">
       <header className="mb-20 md:mb-28">
-        <p className="mb-5 text-[10px] uppercase tracking-[0.22em] text-sea">
-          El aperitivo tiene su arte
-        </p>
         <h1 className="text-6xl leading-none tracking-[-0.05em] md:text-8xl">
           ¿Qué te
           <br />

@@ -8,9 +8,6 @@ export function ContactSection() {
     >
       <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-2 md:items-center">
         <div data-reveal>
-          <p className="mb-4 text-[10px] uppercase tracking-[0.22em]">
-            Estamos para ayudarte
-          </p>
           <h2 className="text-4xl tracking-[-0.04em] md:text-5xl">
             Contacta con nosotros
           </h2>

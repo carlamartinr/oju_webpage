@@ -61,7 +61,7 @@ El diseño de los productos como gildas o aceitunas será animado, no serán fot
 - Carta: encabezados de categoría sin numeración ni frases laterales; artículos con nombre e ingredientes, sin repetir la categoría.
 - Carrusel: mismo contenedor `max-w-7xl` y márgenes `px-6 md:px-12` que el resto de la página. Solo ilustración y nombre; el enlace «Toda la carta» permite ampliar información. Se elimina el aviso de muestra bajo la cinta.
 - Hero sin enlace a Carta ni sello circular «Mucho sur. Mucho sabor.».
-- Contacto verde (#152D0B), texto albariza y encabezado directo «Contacta con nosotros».
+- Contacto verde (#152D0B), texto albariza y encabezado directo «Contacta con nosotros». Sin etiqueta superior.
 - Los soles se sustituyen por el motivo de aceitunas original del logo, mostrado mediante una máscara SVG del PNG existente para conservar su silueta.
 
 ## Revisión de realismo · septiembre 2026
@@ -100,9 +100,9 @@ El diseño de los productos como gildas o aceitunas será animado, no serán fot
 - El titular del carrusel es «¿Cuál es la tuya?»: invita a explorar las gildas y se mantiene en una sola línea desde 320 px. En móvil baja a 30 px para conservar la composición.
 - «Menos prisa. Más aperitivo.»: sin párrafo de apoyo.
 - Botones (`ButtonLink`): rectangulares, contorno fino al 60 %, sin relleno; al pasar el cursor se rellenan (verde sobre albariza, albariza sobre verde). Compactos: texto y flecha juntos, sin hueco intermedio. El envío de Reserva es el único botón relleno. Controles de cantidad cuadrados. El carrito del header es solo el icono, sin círculo.
-- Dónde encontrarnos: titular «Dónde encontrarnos», con «Tu próxima buena parada» encima en cursiva azul ligeramente girada (mismo estilo que «¡Ojú, qué cosa más buena!»). Dirección y horario en dos columnas, sin líneas separadoras.
+- Dónde encontrarnos: titular «Dónde encontrarnos», con «Tu próxima buena parada» encima en cursiva azul recta, sin girar. Dirección y horario en dos columnas, sin líneas separadoras.
 - Hueco de foto (`PhotoPlaceholder`): rectángulo con esquinas `rounded-2xl` (como las fotos de producto), fondo verde al 6 % y el motivo de aceitunas; 4:3 en portada, 4:5 en Conócenos. Sin arco, borde ni logotipo de texto.
-- Carta: cabecera sin párrafo ni línea separadora. Etiqueta, titular «¿Qué te pide el cuerpo?» y la onda azul debajo, alineada a la izquierda con el titular. El título de sección «Nuestras Gildas» va grande y en azul de marca (`text-4xl`/`md:text-5xl`); los nombres de producto, más pequeños (`text-lg`/`md:text-xl`) y en verde, para que la jerarquía sea evidente.
+- Carta: cabecera sin etiqueta superior, párrafo ni línea separadora. Titular «¿Qué te pide el cuerpo?» y la onda azul debajo, alineada a la izquierda con el titular. El título de sección «Nuestras Gildas» va grande y en azul de marca (`text-4xl`/`md:text-5xl`); los nombres de producto, más pequeños (`text-lg`/`md:text-xl`) y en verde, para que la jerarquía sea evidente.
 
 ## Conócenos con historia real · octubre 2026
 

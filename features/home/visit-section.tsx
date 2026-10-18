@@ -11,9 +11,7 @@ export function VisitSection() {
         className="aspect-4/3"
       />
       <div data-reveal>
-        <p className="mb-4 inline-block -rotate-3 font-serif text-xl italic text-sea">
-          Tu próxima buena parada
-        </p>
+        <p className="mb-4 font-serif text-xl italic text-sea">Tu próxima buena parada</p>
         <h2 className="text-4xl leading-tight tracking-[-0.045em] md:text-5xl">
           Dónde
           <br />
