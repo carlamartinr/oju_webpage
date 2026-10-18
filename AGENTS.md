@@ -93,3 +93,4 @@ Se trata de un proyecto para una empresa / tienda de alimentación (de gildas, a
 - Mantener las cabeceras en `public/_headers`, incluyendo `noindex` para dominios `pages.dev`. No usar nonces fijos ni habilitar JavaScript inline indiscriminadamente. GSAP necesita estilos inline.
 - Los originales de imprenta van fuera de `public/` (en `design/source-assets/`); todo lo que se guarda en `public/` se publica.
 - Verificar instalación reproducible y auditoría separando producción y desarrollo; no degradar ESLint ni usar `npm audit fix --force` para ocultar una vulnerabilidad transitiva sin parche.
+- El favicon (`app/icon.svg`) es circular, no rectangular: `viewBox` cuadrado y un `<circle>` albariza con margen suficiente para la hoja del logo. Comprobarlo también renderizado a 32 px.

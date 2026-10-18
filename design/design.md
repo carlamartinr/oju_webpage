@@ -136,5 +136,5 @@ El diseño de los productos como gildas o aceitunas será animado, no serán fot
 
 - Títulos y descripciones específicos por página, con el nombre Ojú y contexto local de Sanlúcar de Barrameda. Dominio canónico: `https://ojugildas.com`.
 - Imagen social horizontal de 1200 × 630: logo original sobre albariza a la izquierda y fotografía real de gildas a la derecha. Se genera durante la compilación y no requiere servidor ni servicios externos.
-- Favicon basado en la versión vectorial del logo real de `design/logo/oju-solo.svg`, sustituyendo la letra provisional.
+- Favicon basado en la versión vectorial del logo real de `design/logo/oju-solo.svg`, sustituyendo la letra provisional. Formato circular: lienzo cuadrado con un círculo albariza centrado en el logo y fondo transparente fuera de él; nunca rectangular.
 - Datos estructurados del negocio limitados a dirección, contacto e identidad ya confirmados; sin precios, horarios ni valoraciones inventados.
