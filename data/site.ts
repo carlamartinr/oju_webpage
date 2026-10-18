@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const site = {
   name: "Ojú",
   url: "https://ojugildas.com",
-  title: "Gildas en Sanlúcar de Barrameda",
+  title: "Gildas y aceitunas en Sanlúcar de Barrameda",
   description:
     "Descubre las gildas de Ojú en Sanlúcar de Barrameda: consulta la carta, sus ingredientes y alérgenos, y acuerda tu pedido por WhatsApp.",
 };
