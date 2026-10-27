@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { allergenLabels, gildaPrice } from "@/data/products";
+import { allergenLabels } from "@/data/products";
 import { site } from "@/data/site";
 import { AllergenIcon } from "@/components/ui/allergen-icon";
 import { ButtonLink } from "@/components/ui/button-link";
@@ -166,8 +166,13 @@ export function Order() {
                   quantity={quantity}
                   onChange={(next) => change(product.id, product.name, next)}
                 />
-                <p className="w-20 text-right font-semibold tabular-nums">
-                  {formatPrice(quantity * gildaPrice)}
+                <p className="w-20 text-right tabular-nums">
+                  <span className="font-semibold">
+                    {formatPrice(quantity * product.price)}
+                  </span>
+                  <span className="block text-xs text-olive/60">
+                    {formatPrice(product.price)}/ud.
+                  </span>
                 </p>
               </div>
             </li>
@@ -183,7 +188,7 @@ export function Order() {
           </span>
         </div>
         <p className="mt-1 text-right text-sm text-olive/65">
-          {gildaCount(count)} a {formatPrice(gildaPrice)} · IVA incluido
+          {gildaCount(count)} · IVA incluido
         </p>
         <label className="mt-10 block text-sm font-semibold">
           Nota <span className="font-normal text-olive/65">(opcional)</span>

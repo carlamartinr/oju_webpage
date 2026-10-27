@@ -1,5 +1,5 @@
 import { pageMetadata } from "@/data/site";
-import { gildaPrice, products } from "@/data/products";
+import { products } from "@/data/products";
 import { formatPrice } from "@/features/cart/cart";
 import { AddToCart } from "@/features/cart/add-to-cart";
 import { OrderSummary } from "@/features/cart/order-summary";
@@ -42,7 +42,7 @@ export default function MenuPage() {
             >
               <div className="flex items-center justify-between gap-4">
                 <p className="font-semibold tabular-nums">
-                  {formatPrice(gildaPrice)}
+                  {formatPrice(product.price)}
                 </p>
                 <AddToCart id={product.id} name={product.name} />
               </div>

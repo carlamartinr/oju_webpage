@@ -7,6 +7,8 @@ export type Product = {
   ingredients: string[];
   allergens: Allergen[];
   image: string;
+  /** Céntimos, IVA incluido. */
+  price: number;
   /** Aparece en la cinta de productos de la portada. */
   featured?: boolean;
 };
@@ -18,9 +20,6 @@ export const allergenLabels: Record<Allergen, string> = {
   moluscos: "Moluscos",
 };
 
-/** Precio por gilda, en céntimos e IVA incluido. Todas valen lo mismo. */
-export const gildaPrice = 150;
-
 // Carta de gildas, en el orden de las fichas originales (01–20).
 export const products: Product[] = [
   {
@@ -29,6 +28,7 @@ export const products: Product[] = [
     ingredients: ["Aceituna gordal", "Lomo", "Tomate seco", "Queso"],
     allergens: ["leche"],
     image: "/images/gildas/la-bandolera.jpg",
+    price: 180,
     featured: true,
   },
   {
@@ -37,6 +37,7 @@ export const products: Product[] = [
     ingredients: ["Aceituna gordal", "Tomate seco", "Anchoa", "Queso"],
     allergens: ["pescado", "leche"],
     image: "/images/gildas/la-coloraita.jpg",
+    price: 180,
     featured: true,
   },
   {
@@ -45,6 +46,7 @@ export const products: Product[] = [
     ingredients: ["Aceituna manzanilla", "Piparra", "Anchoa", "Doble piparra"],
     allergens: ["pescado"],
     image: "/images/gildas/la-clasica.jpg",
+    price: 150,
   },
   {
     id: "la-caprichosa",
@@ -52,6 +54,7 @@ export const products: Product[] = [
     ingredients: ["Aceituna manzanilla", "Doble arándano", "Queso"],
     allergens: ["leche"],
     image: "/images/gildas/la-caprichosa.jpg",
+    price: 150,
     featured: true,
   },
   {
@@ -60,6 +63,7 @@ export const products: Product[] = [
     ingredients: ["Aceituna manzanilla", "Ciruela pasa", "Piparra", "Queso"],
     allergens: ["leche"],
     image: "/images/gildas/la-morenaza.jpg",
+    price: 150,
   },
   {
     id: "la-canalla",
@@ -73,6 +77,7 @@ export const products: Product[] = [
     ],
     allergens: ["leche"],
     image: "/images/gildas/la-canalla.jpg",
+    price: 180,
     featured: true,
   },
   {
@@ -81,6 +86,7 @@ export const products: Product[] = [
     ingredients: ["Aceituna gordal", "Cecina de León", "Queso"],
     allergens: ["leche"],
     image: "/images/gildas/la-serrana.jpg",
+    price: 180,
   },
   {
     id: "la-salinera",
@@ -88,6 +94,7 @@ export const products: Product[] = [
     ingredients: ["Aceituna gordal", "Mojama", "Queso", "Piparra"],
     allergens: ["pescado", "leche"],
     image: "/images/gildas/la-salinera.jpg",
+    price: 180,
     featured: true,
   },
   {
@@ -96,6 +103,7 @@ export const products: Product[] = [
     ingredients: ["Aceituna manzanilla", "Anchoa", "Piparra", "Queso"],
     allergens: ["pescado", "leche"],
     image: "/images/gildas/la-sala.jpg",
+    price: 150,
   },
   {
     id: "la-melosa",
@@ -103,6 +111,7 @@ export const products: Product[] = [
     ingredients: ["Aceituna gordal", "Membrillo", "Piparra", "Queso"],
     allergens: ["leche", "frutos-de-cascara"],
     image: "/images/gildas/la-melosa.jpg",
+    price: 150,
   },
   {
     id: "la-tentacula",
@@ -116,6 +125,7 @@ export const products: Product[] = [
     ],
     allergens: ["moluscos"],
     image: "/images/gildas/la-tentacula.jpg",
+    price: 180,
     featured: true,
   },
   {
@@ -129,6 +139,7 @@ export const products: Product[] = [
     ],
     allergens: ["pescado"],
     image: "/images/gildas/la-bien-casa.jpg",
+    price: 180,
   },
   {
     id: "la-pecadora",
@@ -136,6 +147,7 @@ export const products: Product[] = [
     ingredients: ["Aceituna manzanilla", "Dátil", "Piparra", "Queso", "Anchoa"],
     allergens: ["leche", "pescado"],
     image: "/images/gildas/la-pecadora.jpg",
+    price: 180,
   },
   {
     id: "la-platea",
@@ -149,6 +161,7 @@ export const products: Product[] = [
     ],
     allergens: ["pescado", "leche"],
     image: "/images/gildas/la-platea.jpg",
+    price: 150,
   },
   {
     id: "la-senorita",
@@ -161,6 +174,7 @@ export const products: Product[] = [
     ],
     allergens: ["pescado", "leche"],
     image: "/images/gildas/la-senorita.jpg",
+    price: 180,
   },
   {
     id: "la-italiana",
@@ -174,6 +188,7 @@ export const products: Product[] = [
     ],
     allergens: ["pescado", "leche"],
     image: "/images/gildas/la-italiana.jpg",
+    price: 180,
     featured: true,
   },
   {
@@ -188,6 +203,7 @@ export const products: Product[] = [
     ],
     allergens: ["pescado", "leche"],
     image: "/images/gildas/la-ahuma.jpg",
+    price: 180,
     featured: true,
   },
   {
@@ -202,6 +218,7 @@ export const products: Product[] = [
     ],
     allergens: ["pescado", "leche"],
     image: "/images/gildas/la-mal-casa.jpg",
+    price: 180,
   },
   {
     id: "la-joya",
@@ -209,6 +226,7 @@ export const products: Product[] = [
     ingredients: ["Aceituna gordal", "Mojama", "Queso", "Guinda"],
     allergens: ["pescado", "leche"],
     image: "/images/gildas/la-joya.jpg",
+    price: 180,
     featured: true,
   },
   {
@@ -222,5 +240,6 @@ export const products: Product[] = [
     ],
     allergens: ["leche", "frutos-de-cascara"],
     image: "/images/gildas/la-frutera.jpg",
+    price: 150,
   },
 ];

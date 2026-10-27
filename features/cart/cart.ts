@@ -1,4 +1,4 @@
-import { gildaPrice, products } from "@/data/products";
+import { products } from "@/data/products";
 import { site } from "@/data/site";
 
 /** Units per product id. Only ids from the menu with 1–99 units. */
@@ -23,8 +23,13 @@ export function cartLines(cart: Cart) {
 }
 
 export function cartTotals(cart: Cart) {
-  const count = Object.values(cart).reduce((total, quantity) => total + quantity, 0);
-  return { count, price: count * gildaPrice };
+  return cartLines(cart).reduce(
+    (totals, { product, quantity }) => ({
+      count: totals.count + quantity,
+      price: totals.price + quantity * product.price,
+    }),
+    { count: 0, price: 0 },
+  );
 }
 
 export function whatsappUrl(cart: Cart, note: string) {
