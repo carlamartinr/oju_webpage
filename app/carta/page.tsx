@@ -1,9 +1,11 @@
 import { pageMetadata } from "@/data/site";
-import { products } from "@/data/products";
+import { gildaPrice, products } from "@/data/products";
+import { formatPrice } from "@/features/cart/cart";
+import { AddToCart } from "@/features/cart/add-to-cart";
+import { OrderSummary } from "@/features/cart/order-summary";
 import { AllergenLegend } from "@/components/ui/allergen-icon";
 import { ProductCard } from "@/features/catalog/product-card";
 import { ProductGrid } from "@/features/catalog/product-grid";
-import { ButtonLink } from "@/components/ui/button-link";
 import { Wave } from "@/components/ui/icons";
 
 export const metadata = pageMetadata(
@@ -37,7 +39,14 @@ export default function MenuPage() {
               id={product.id}
               product={product}
               loading={index < 2 ? "eager" : "lazy"}
-            />
+            >
+              <div className="flex items-center justify-between gap-4">
+                <p className="font-semibold tabular-nums">
+                  {formatPrice(gildaPrice)}
+                </p>
+                <AddToCart id={product.id} name={product.name} />
+              </div>
+            </ProductCard>
           ))}
         </ProductGrid>
         <aside
@@ -56,10 +65,7 @@ export default function MenuPage() {
           </p>
         </aside>
       </section>
-      <div className="flex flex-col items-start justify-between gap-6 border-t border-olive/20 pt-10 sm:flex-row sm:items-center">
-        <h2 className="text-2xl">¿Ya tienes tus favoritas?</h2>
-        <ButtonLink href="/reserva">Hacer un pedido</ButtonLink>
-      </div>
+      <OrderSummary />
     </div>
   );
 }

@@ -85,3 +85,35 @@ export function ExternalIcon({ className = "size-4", ...props }: IconProps) {
     </svg>
   );
 }
+
+export function PlusIcon({ className = "size-4", ...props }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      className={className}
+      aria-hidden="true"
+      {...props}
+    >
+      <path d="M12 5v14M5 12h14" />
+    </svg>
+  );
+}
+
+export function MinusIcon({ className = "size-4", ...props }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      className={className}
+      aria-hidden="true"
+      {...props}
+    >
+      <path d="M5 12h14" />
+    </svg>
+  );
+}

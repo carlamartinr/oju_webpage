@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 export const site = {
   name: "Ojú",
   url: "https://ojugildas.com",
+  phone: "616 232 057",
+  whatsapp: "34616232057",
   title: "Gildas y aceitunas en Sanlúcar de Barrameda",
   description:
     "Descubre las gildas de Ojú en Sanlúcar de Barrameda: consulta la carta, sus ingredientes y alérgenos, y acuerda tu pedido por WhatsApp.",

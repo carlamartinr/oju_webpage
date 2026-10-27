@@ -13,6 +13,7 @@ export function ProductCard({
   centered = false,
   loading,
   sizes = "(min-width: 1024px) 18rem, (min-width: 640px) 45vw, 90vw",
+  children,
 }: {
   /** Anchor id; only set where the card is unique on the page. */
   id?: string;
@@ -21,9 +22,11 @@ export function ProductCard({
   centered?: boolean;
   loading?: "eager" | "lazy";
   sizes?: string;
+  /** Actions pinned to the bottom, so they line up across a grid row. */
+  children?: React.ReactNode;
 }) {
   return (
-    <article id={id} className="group">
+    <article id={id} className="group flex h-full flex-col">
       <div className="relative aspect-square overflow-hidden rounded-2xl bg-paper">
         <Image
           src={product.image}
@@ -34,7 +37,7 @@ export function ProductCard({
           className="object-cover transition-transform duration-700 ease-out motion-safe:group-hover:scale-[1.04]"
         />
       </div>
-      <div className={`pt-5 ${centered ? "text-center" : ""}`}>
+      <div className={`flex flex-1 flex-col pt-5 ${centered ? "text-center" : ""}`}>
         <h3 className="text-lg md:text-xl">{product.name}</h3>
         {showDetails && (
           <>
@@ -52,6 +55,7 @@ export function ProductCard({
             </ul>
           </>
         )}
+        {children && <div className="mt-auto pt-6">{children}</div>}
       </div>
     </article>
   );

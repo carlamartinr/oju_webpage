@@ -18,6 +18,9 @@ export const allergenLabels: Record<Allergen, string> = {
   moluscos: "Moluscos",
 };
 
+/** Precio por gilda, en céntimos e IVA incluido. Todas valen lo mismo. */
+export const gildaPrice = 150;
+
 // Carta de gildas, en el orden de las fichas originales (01–20).
 export const products: Product[] = [
   {
