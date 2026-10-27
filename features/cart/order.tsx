@@ -6,7 +6,7 @@ import { allergenLabels, gildaPrice } from "@/data/products";
 import { site } from "@/data/site";
 import { AllergenIcon } from "@/components/ui/allergen-icon";
 import { ButtonLink } from "@/components/ui/button-link";
-import { WhatsAppIcon } from "@/components/ui/icons";
+import { ExternalIcon, WhatsAppIcon } from "@/components/ui/icons";
 import { cartLines, cartTotals, formatPrice, gildaCount, whatsappUrl } from "./cart";
 import { clearCart, setQuantity, useCart, useHydrated } from "./cart-store";
 import { QuantityStepper } from "./quantity-stepper";
@@ -119,9 +119,10 @@ export function Order() {
             href={`https://wa.me/${site.whatsapp}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-semibold text-olive underline-offset-4 hover:underline"
+            className="group inline-flex items-center gap-1.5 font-semibold text-olive underline-offset-4 hover:underline"
           >
             Escríbenos al {site.phone}
+            <ExternalIcon className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </a>
         </p>
       </div>
