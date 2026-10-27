@@ -6,6 +6,7 @@ import type { Cart } from "./cart";
 const key = "oju:pedido";
 const empty: Cart = {};
 const listeners = new Set<() => void>();
+const addListeners = new Set<() => void>();
 let cache: Cart | undefined;
 
 // Stored data may be stale or edited by hand: keep only known products.
@@ -71,10 +72,20 @@ export function useHydrated() {
 
 export function setQuantity(id: string, quantity: number) {
   const next: Record<string, number> = { ...read() };
+  const previous = next[id] ?? 0;
   const units = Math.min(Math.max(Math.trunc(quantity) || 0, 0), maxQuantity);
   if (units) next[id] = units;
   else delete next[id];
   write(next);
+  if (units > previous) addListeners.forEach((listener) => listener());
+}
+
+/** Runs whenever the user adds units, but not on loads or other tabs. */
+export function onAdd(listener: () => void) {
+  addListeners.add(listener);
+  return () => {
+    addListeners.delete(listener);
+  };
 }
 
 export function clearCart() {
