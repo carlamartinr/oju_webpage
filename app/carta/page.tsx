@@ -2,6 +2,7 @@ import { pageMetadata } from "@/data/site";
 import { products } from "@/data/products";
 import { AllergenLegend } from "@/components/ui/allergen-icon";
 import { ProductCard } from "@/features/catalog/product-card";
+import { ProductGrid } from "@/features/catalog/product-grid";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Wave } from "@/components/ui/icons";
 
@@ -29,15 +30,16 @@ export default function MenuPage() {
         <h2 className="mb-12 text-4xl tracking-[-0.04em] text-sea md:text-5xl">
           Nuestras Gildas
         </h2>
-        <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+        <ProductGrid className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
           {products.map((product, index) => (
             <ProductCard
               key={product.id}
+              id={product.id}
               product={product}
               loading={index < 2 ? "eager" : "lazy"}
             />
           ))}
-        </div>
+        </ProductGrid>
         <aside
           aria-labelledby="alergenos"
           className="mt-16 border-t border-olive/20 pt-8"

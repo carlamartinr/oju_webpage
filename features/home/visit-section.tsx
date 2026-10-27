@@ -1,3 +1,4 @@
+import { ExternalIcon } from "@/components/ui/icons";
 import { PhotoPlaceholder } from "@/components/ui/photo-placeholder";
 
 export function VisitSection() {
@@ -35,9 +36,10 @@ export function VisitSection() {
           href="https://www.google.com/maps/search/?api=1&query=Calle+Pozo+Amarguillo+15-17%2C+Sanl%C3%BAcar+de+Barrameda%2C+C%C3%A1diz"
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-10 inline-block text-sm font-semibold text-sea hover:underline"
+          className="group mt-10 inline-flex items-center gap-1.5 text-sm font-semibold text-sea decoration-1 underline-offset-[6px] hover:underline"
         >
-          Cómo llegar ↗
+          Cómo llegar
+          <ExternalIcon className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
         </a>
       </div>
     </section>

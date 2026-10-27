@@ -138,3 +138,16 @@ El diseño de los productos como gildas o aceitunas será animado, no serán fot
 - Imagen social horizontal de 1200 × 630: logo original sobre albariza a la izquierda y fotografía real de gildas a la derecha. Se genera durante la compilación y no requiere servidor ni servicios externos.
 - Favicon basado en la versión vectorial del logo real de `design/logo/oju-solo.svg`, sustituyendo la letra provisional. Formato circular: lienzo cuadrado con un círculo albariza centrado en el logo y fondo transparente fuera de él; nunca rectangular.
 - Datos estructurados del negocio limitados a dirección, contacto e identidad ya confirmados; sin precios, horarios ni valoraciones inventados.
+
+## Carrusel deslizable · octubre 2026
+
+- La cinta sigue en movimiento continuo, pero ahora se puede arrastrar (táctil y ratón), lanzar con inercia, mover con el trackpad horizontal y con las flechas del teclado. Tras soltar, frena y recupera suavemente la velocidad de crucero. El cursor de mano indica que se puede arrastrar.
+- Móvil: tarjetas a ~58vw (antes 72vw) y separación menor; la cinta llega a los bordes de la pantalla para que asome el siguiente producto. Escritorio sin cambios.
+- «Cómo llegar» usa un icono SVG de enlace externo en lugar del carácter «↗», que iOS mostraba como emoji.
+
+## Del carrusel a la carta · octubre 2026
+
+- Cada gilda del carrusel es un enlace a su ficha dentro de Carta (`/carta#la-bandolera`): URL legible, estable y compartible, sin páginas por producto mientras no aporten contenido propio.
+- Al llegar, la gilda queda arriba y su foto hace un único zoom suave (3 %, ida y vuelta en menos de un segundo). Las demás no se atenúan. Con movimiento reducido no hay efecto. Sin bordes, contornos ni marcas permanentes.
+- Arrastrar o detener la cinta en movimiento no abre el enlace; un toque limpio sí. Con teclado, la cinta se detiene mientras haya foco dentro y cada tarjeta enfocada se desliza a la vista.
+- La cinta mantiene una selección de nueve gildas; la carta completa sigue en «Toda la carta».

@@ -3,13 +3,19 @@ import { allergenLabels } from "@/data/products";
 import type { Product } from "@/data/products";
 import { AllergenIcon } from "@/components/ui/allergen-icon";
 
+/** Each gilda has a stable, shareable anchor in Carta. */
+export const productHref = (id: string) => `/carta#${id}`;
+
 export function ProductCard({
+  id,
   product,
   showDetails = true,
   centered = false,
   loading,
   sizes = "(min-width: 1024px) 18rem, (min-width: 640px) 45vw, 90vw",
 }: {
+  /** Anchor id; only set where the card is unique on the page. */
+  id?: string;
   product: Product;
   showDetails?: boolean;
   centered?: boolean;
@@ -17,7 +23,7 @@ export function ProductCard({
   sizes?: string;
 }) {
   return (
-    <article className="group">
+    <article id={id} className="group">
       <div className="relative aspect-square overflow-hidden rounded-2xl bg-paper">
         <Image
           src={product.image}
