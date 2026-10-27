@@ -99,7 +99,7 @@ El diseño de los productos como gildas o aceitunas será animado, no serán fot
 - Carrusel: sin etiqueta superior. «Toda la carta →» sin subrayado; aparece al pasar el cursor, con un leve desplazamiento de la flecha.
 - El titular del carrusel es «¿Cuál es la tuya?»: invita a explorar las gildas y se mantiene en una sola línea desde 320 px. En móvil baja a 30 px para conservar la composición.
 - «Menos prisa. Más aperitivo.»: sin párrafo de apoyo.
-- Botones (`ButtonLink`): rectangulares, contorno fino al 60 %, sin relleno; al pasar el cursor se rellenan (verde sobre albariza, albariza sobre verde). Compactos: texto y flecha juntos, sin hueco intermedio. El envío de Reserva es el único botón relleno. Controles de cantidad cuadrados. El carrito del header es solo el icono, sin círculo.
+- Botones (`ButtonLink`): rectangulares, contorno fino al 60 %, sin relleno; al pasar el cursor se rellenan (verde sobre albariza, albariza sobre verde). Compactos: texto y flecha juntos, sin hueco intermedio. El envío de Reserva es el único botón relleno. Controles de cantidad circulares (ver «Pedido con carrito»). El carrito del header es solo el icono, sin círculo.
 - Dónde encontrarnos: titular «Dónde encontrarnos», con «Tu próxima buena parada» encima en cursiva azul recta, sin girar. Dirección y horario en dos columnas, sin líneas separadoras.
 - Hueco de foto (`PhotoPlaceholder`): rectángulo con esquinas `rounded-2xl` (como las fotos de producto), fondo verde al 6 % y el motivo de aceitunas; 4:3 en portada, 4:5 en Conócenos. Sin arco, borde ni logotipo de texto.
 - Carta: cabecera sin párrafo ni línea separadora. Etiqueta «20 gildas, ninguna igual» (el número sale de la carta), titular «¿Qué te pide el cuerpo?» y la onda azul debajo, alineada a la izquierda con el titular. El título de sección «Nuestras Gildas» va grande y en azul de marca (`text-4xl`/`md:text-5xl`); los nombres de producto, más pequeños (`text-lg`/`md:text-xl`) y en verde, para que la jerarquía sea evidente.
@@ -151,3 +151,15 @@ El diseño de los productos como gildas o aceitunas será animado, no serán fot
 - Al llegar, la gilda queda arriba y su foto hace un único zoom suave (3 %, ida y vuelta en menos de un segundo). Las demás no se atenúan. Con movimiento reducido no hay efecto. Sin bordes, contornos ni marcas permanentes.
 - Arrastrar o detener la cinta en movimiento no abre el enlace; un toque limpio sí. Con teclado, la cinta se detiene mientras haya foco dentro y cada tarjeta enfocada se desliza a la vista.
 - La cinta mantiene una selección de nueve gildas; la carta completa sigue en «Toda la carta».
+
+## Pedido con carrito · octubre 2026
+
+Sustituye a la página Reserva y al formulario de recogida, que se eliminan (sin redirección de `/reserva`).
+
+- Un único paso: «Tu pedido» (`/pedido`). Separar carrito y reserva añadía un clic sin aportar nada, porque el cierre ocurre en WhatsApp.
+- Precio: 1,50 € por gilda, IVA incluido. Se muestra en cada artículo de Carta, en cada línea del pedido y en el total.
+- Carta: bajo los alérgenos de cada gilda, precio a la izquierda y un «+» circular verde relleno a la derecha (44 px, sin texto: junto al precio se entiende y evita repetir «Añadir» veinte veces), alineados al pie de cada fila de la rejilla. Al añadir, se convierte en el selector circular − / cantidad / + («−» con contorno, «+» relleno), con el «+» en el mismo sitio para seguir sumando sin buscarlo. La cantidad también se puede escribir. El cierre de Carta resume el pedido en vivo: «Tu pedido», «N gildas · total» y «Ver mi pedido»; vacío, «¿Ya tienes tus favoritas?» y «Añádelas y envíanos tu pedido por WhatsApp.», sin botón. Se descartó la barra flotante «Ver pedido»: tapaba contenido en móvil y quedaba suelta en escritorio.
+- Cabecera: «Pedido» con un círculo azul que indica el número de gildas y que late brevemente al cambiar. Sin icono de carrito.
+- Tu pedido: titular «Tu pedido» con «pedido» en azul. Líneas con foto, nombre, ingredientes y alérgenos (deben verse antes de pedir), selector y precio de la línea, sin separadores. Al quitar una gilda, «Has quitado X. Deshacer», que se desvanece y se pliega a los 5 s (se mantiene mientras el ratón está encima o el teclado está en «Deshacer»). A la derecha en escritorio (debajo en móvil): total grande, «N gildas a 1,50 € · IVA incluido», nota opcional («Para cuándo lo quieres, alergias, si es para una celebración…») y el único botón relleno, «Pedir por WhatsApp», con una línea que explica qué ocurrirá. Tras pulsarlo, se ofrece «Vaciar el pedido».
+- Vacío: texto breve, «Ver la carta» y, como alternativa, «Escríbenos al 616 232 057».
+- Mensaje de WhatsApp: saludo a Ojú, una línea por gilda («• 2 × La Bandolera»), total de gildas y precio, y la nota si la hay.

@@ -32,9 +32,9 @@ Se trata de un proyecto para una empresa / tienda de alimentación (de gildas, a
 ## Decisiones de implementación
 - Utilizar Tailwind CSS para los estilos; definir los tokens de marca en el tema y mantener el CSS global mínimo.
 - Organizar el código por responsabilidades: rutas en `app`, componentes compartidos en `components`, funcionalidades en `features` y contenido tipado en `data`.
-- La primera versión pública incluye portada, Carta, Conócenos y una página de Reserva para pedidos por WhatsApp al 616 232 057. El formulario de recogida sigue en desarrollo y no debe exponerse públicamente.
+- La web pública incluye portada, Carta, Conócenos y Pedido (`/pedido`). Los pedidos se hacen con un carrito y se envían por WhatsApp al 616 232 057 con el mensaje ya escrito. `/reserva` y el antiguo formulario de recogida se eliminaron; no redirigir `/reserva`.
 - La carta es real: 20 gildas en `data/products.ts` (nombre, ingredientes y alérgenos según las fichas de la usuaria), con fotos en `public/images/gildas/`. Aceitunas y bebidas quedan fuera hasta tener fotos reales. No inventar dirección, contacto ni horarios. La historia de Conócenos es el texto real de la marca: no reescribir su contenido, solo corregir ortografía y escribir siempre «Ojú» (no «OJÚ»).
-- Hasta conectar el envío de pedidos, el formulario solo prepara un resumen y nunca confirma una reserva real.
+- El carrito no confirma ni cobra nada: solo prepara el mensaje de WhatsApp. Precio confirmado: 1,50 € por gilda, IVA incluido (`gildaPrice` en céntimos en `data/products.ts`). Se pide por unidades, sin mínimo (máximo 99 por gilda). El único dato extra es una nota opcional.
 
 ## Correcciones de diseño
 - Los productos son ilustraciones editoriales semirrealistas: volumen con degradados suaves, brillos especulares, sombras de contacto y texturas sutiles. Evitar tanto el acabado plano/caricaturesco como el fotorrealismo o 3D.
@@ -65,7 +65,7 @@ Se trata de un proyecto para una empresa / tienda de alimentación (de gildas, a
 
 - Fotos de producto: usar las fotos retocadas de las fichas (`Gildas-guia.zip`) recortadas en cuadrado sin el título ni el texto de ingredientes; se ven mejor y son homogéneas. Los originales de `Gildas.zip` se descartaron por el acabado menos cuidado. Fotos cuadradas, gilda centrada, esquinas redondeadas y directamente sobre la albariza.
 - Alérgenos: usar las denominaciones del anexo II del Reglamento (UE) 1169/2011 (Leche, no «Lácteos»; Frutos de cáscara, no «Frutos secos»; el pulpo es Moluscos, no Pescado). Los iconos siempre con leyenda y nombre accesible. No quitar ni añadir alérgenos sin confirmación de la marca: dependen de las etiquetas reales de cada proveedor.
-- La ilustración SVG se mantiene solo en el hero de portada; en carta, carrusel y reserva se usan las fotos.
+- La ilustración SVG se mantiene solo en el hero de portada; en carta, carrusel y pedido se usan las fotos.
 
 ## Simplificación visual
 - En Carta, mostrar títulos de sección sin números ni frases auxiliares. No repetir la categoría encima de cada artículo.
@@ -74,7 +74,7 @@ Se trata de un proyecto para una empresa / tienda de alimentación (de gildas, a
 - Eliminar del carrusel el texto «Una muestra de nuestra futura carta…».
 - Contacto debe ser explícito («Contacta con nosotros»), con fondo verde de marca y texto albariza.
 - Evitar recursos «de plantilla»: botones en píldora (`rounded-full`), frases de relleno bajo los titulares, guiones o rayas decorativas delante de etiquetas, filas de datos con separadores horizontales y tarjetas con arco.
-- Botones rectangulares, con contorno fino y sin relleno; se rellenan al pasar el cursor. Cuando se active el formulario de recogida, su envío irá relleno por ser la acción principal.
+- Botones rectangulares, con contorno fino y sin relleno; se rellenan al pasar el cursor. «Pedir por WhatsApp» es el único botón relleno, por ser la acción principal.
 - Los títulos de sección deben distinguirse claramente de los nombres de artículo (tamaño y color), nunca casi iguales.
 - Alinear los elementos decorativos (como la onda) con el texto al que acompañan; no dejarlos sueltos en el lado opuesto.
 - Los enlaces de texto («Toda la carta →») van sin subrayado; el subrayado aparece solo al pasar el cursor.
@@ -87,10 +87,13 @@ Se trata de un proyecto para una empresa / tienda de alimentación (de gildas, a
 - Instagram de la marca: @ojugildas. Mostrar el enlace solo junto al teléfono y correo en Contacto; no añadirlo al pie ni al menú principal.
 - El hueco de la foto del local en portada debe decir solo «Próximamente»; evitar textos que describan el lugar donde irá la foto.
 - El carrusel de portada lleva el titular «¿Cuál es la tuya?» en una sola línea también a 320 px; no volver a «Lo bueno, para compartir» ni forzar un salto de línea.
-- Reserva pública debe tener una composición sencilla y protagonista: un titular, un texto breve y un solo enlace al 616 232 057 por WhatsApp. En el botón, mostrar icono y número sin repetir la palabra «WhatsApp»; evitar segundo titular, onda y enlace secundario.
-- Reserva mantiene el fondo albariza, sin bloque verde. Eliminar la etiqueta «Pedidos para recoger» y no indicar que el pedido deba recogerse en tienda: la marca también podría repartirlo. Componer el título a ancho completo y situar debajo texto y botón.
-- En Reserva, titular «Pide tu aperitivo» sin punto. La primera pantalla no debe mostrar el footer; centrar el contenido más abajo con espaciado equilibrado y no añadir hojas decorativas.
-- Reserva pública enlaza al WhatsApp del 616 232 057 y explica que los pedidos se acuerdan por ese canal. Mantener el formulario de prueba en `features/reservations/` sin mostrarlo; no reintroducir el carrito inactivo.
+- Carrito (`features/cart/`): un solo paso, la página «Tu pedido», sin separar carrito y reserva. En Carta, añadir es un «+» circular verde relleno, sin texto (nombre accesible «Añadir X al pedido»), que se convierte en el selector − / cantidad / + con el «+» exactamente en el mismo sitio: tocar el mismo punto sigue sumando. Nunca sacar al usuario de Carta para añadir. Controles de cantidad circulares: «−» con contorno, «+» relleno; la prohibición de píldoras se refiere a botones con texto.
+- El carrito se guarda en `localStorage` (`oju:pedido`) con `useSyncExternalStore`: vacío en servidor e hidratación, saneado al leer (solo ids de la carta, 1–99) y sincronizado entre pestañas. En `/pedido`, no pintar nada hasta hidratar para no mostrar un falso «vacío».
+- Precios con `formatPrice` (formato propio, determinista), no `Intl`: servidor y navegador podrían diferir en los espacios y romper la hidratación.
+- Al quitar una línea, ofrecer «Deshacer» y llevarle el foco. El aviso desaparece a los 5 s plegándose (sin saltos), pero no mientras tenga encima un ratón real o el foco de un usuario de teclado; oculto queda `inert`. Decidir según la última interacción (`keydown` frente a `pointerdown`), no con `:focus-visible` ni `mouseenter`: Safari y los toques en pantalla los activan tras pulsar y el aviso no se iba nunca. Mover el foco a «Deshacer» solo con teclado; al cambiar el «+» inicial por el selector (o al revés), mantener el foco en el control equivalente.
+- `/pedido` lleva `noindex` y no está en el sitemap: es una página personal.
+- No usar barras ni botones flotantes de «Ver pedido»: tapaban contenido en móvil y quedaban sueltos en escritorio. El acceso al pedido es «Pedido» en la cabecera, con el número de gildas y un leve pulso (GSAP, solo con movimiento permitido) cuando cambia, nunca al cargar, y el cierre de Carta (`OrderSummary`), que muestra en vivo «Tu pedido · N gildas · total» y «Ver mi pedido».
+- Revisar `/pedido` a 320 px: el selector y el precio de línea pasan a ocupar todo el ancho bajo la foto, y el texto del botón principal debe caber en una línea.
 
 ## Publicación estática y SEO
 - El dominio canónico confirmado es `https://ojugildas.com`; metadatos y sitemap lo comparten desde `data/site.ts`.
