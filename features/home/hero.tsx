@@ -125,7 +125,7 @@ export function Hero() {
           </div>
         </div>
         <div className="mt-12 flex items-center justify-between border-t border-olive/20 pt-6 text-[10px] uppercase tracking-[0.18em]">
-          <span>Con acento andaluz</span>
+          <span className="hidden sm:inline">Con acento andaluz</span>
           <Wave className="hidden h-5 w-20 text-sea sm:block" />
           <a href="#productos" className="flex items-center gap-3 py-2">
             Esto acaba de empezar

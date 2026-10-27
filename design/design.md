@@ -168,3 +168,4 @@ Sustituye a la página Reserva y al formulario de recogida, que se eliminan (sin
 
 - En móvil el pie es una sola fila (~73 px): «Ojú» a la izquierda y «Contacto» a la derecha. El lema «Gildas y aceitunas del sur.» (ya presente en el hero) y la onda aparecen solo desde `sm`; en escritorio no cambia.
 - Descartado ocultarlo o eliminarlo: cierra la página y es el acceso a contacto desde Carta, Conócenos y Pedido. Tampoco se añaden enlaces legales ni datos sin confirmar.
+- En móvil se oculta «Con acento andaluz» bajo el hero: quedaba pegado a «Esto acaba de empezar». Desde `sm` vuelven la etiqueta y la onda.
