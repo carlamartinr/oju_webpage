@@ -34,7 +34,7 @@ Se trata de un proyecto para una empresa / tienda de alimentación (de gildas, a
 - Organizar el código por responsabilidades: rutas en `app`, componentes compartidos en `components`, funcionalidades en `features` y contenido tipado en `data`.
 - La web pública incluye portada, Carta, Conócenos y Pedido (`/pedido`). Los pedidos se hacen con un carrito y se envían por WhatsApp al 616 232 057 con el mensaje ya escrito. `/reserva` y el antiguo formulario de recogida se eliminaron; no redirigir `/reserva`.
 - La carta es real: 20 gildas en `data/products.ts` (nombre, ingredientes y alérgenos según las fichas de la usuaria), con fotos en `public/images/gildas/`. Aceitunas y bebidas quedan fuera hasta tener fotos reales. No inventar dirección, contacto ni horarios. La historia de Conócenos es el texto real de la marca: no reescribir su contenido, solo corregir ortografía y escribir siempre «Ojú» (no «OJÚ»).
-- El carrito no confirma ni cobra nada: solo prepara el mensaje de WhatsApp. Precio confirmado: 1,50 € por gilda, IVA incluido (`gildaPrice` en céntimos en `data/products.ts`). Se pide por unidades, sin mínimo (máximo 99 por gilda). El único dato extra es una nota opcional.
+- El carrito no confirma ni cobra nada: solo prepara el mensaje de WhatsApp. Precios confirmados por gilda, IVA incluido, en el campo `price` (céntimos) de cada producto en `data/products.ts`: 1,50 € La Clásica, La Caprichosa, La Morenaza, La Salá, La Melosa, La Frutera y La Platea; 1,80 € el resto. No asumir un precio único: los totales suman línea a línea. Se pide por unidades, sin mínimo (máximo 99 por gilda). El único dato extra es una nota opcional.
 
 ## Correcciones de diseño
 - Los productos son ilustraciones editoriales semirrealistas: volumen con degradados suaves, brillos especulares, sombras de contacto y texturas sutiles. Evitar tanto el acabado plano/caricaturesco como el fotorrealismo o 3D.
@@ -58,6 +58,7 @@ Se trata de un proyecto para una empresa / tienda de alimentación (de gildas, a
 - Con foco de teclado dentro del carrusel, la cinta se detiene y lleva la tarjeta enfocada a la vista; el navegador desplaza el contenedor recortado al enfocar, así que se reinicia `scrollLeft` antes de medir.
 - No usar tarjetas blancas ni paneles claros detrás de los productos; las ilustraciones se presentan directamente sobre el fondo de la página.
 - El logo real `public/oju.png` debe verse claramente a la izquierda del Navbar; navegación ligeramente mayor (18 px en escritorio) y adaptable en móvil.
+- La cabecera va siempre en una fila: no forzar el menú a una segunda línea en móviles pequeños (pasaba en el iPhone 13 mini, 375 px). Solo por debajo de 360 px el logo baja de 80 a 64 px; comprobarlo a 320 px con una insignia de pedido de tres cifras.
 - Al comprobar el logo, validar también la carga real en móvil; se sirve el PNG original sin optimización dinámica para evitar la demora observada al generar tamaños nuevos.
 - En Next.js 16, si se usa desplazamiento suave global, añadir `data-scroll-behavior="smooth"` a `html` para que las transiciones de ruta restablezcan correctamente el desplazamiento.
 - No usar caracteres como «↗» o «→» como iconos: iOS los muestra como emoji. Usar los SVG de `components/ui/icons.tsx`.
