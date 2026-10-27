@@ -1,6 +1,6 @@
 <!-- BEGIN:nextjs-agent-rules -->
 
-# This is NOT the Next.js you know
+## This is NOT the Next.js you know
 
 This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
 
@@ -94,6 +94,8 @@ Se trata de un proyecto para una empresa / tienda de alimentación (de gildas, a
 - `/pedido` lleva `noindex` y no está en el sitemap: es una página personal.
 - No usar barras ni botones flotantes de «Ver pedido»: tapaban contenido en móvil y quedaban sueltos en escritorio. El acceso al pedido es «Pedido» en la cabecera, con el número de gildas y un leve pulso (GSAP, solo con movimiento permitido) cuando cambia, nunca al cargar, y el cierre de Carta (`OrderSummary`), que muestra en vivo «Tu pedido · N gildas · total» y «Ver mi pedido».
 - Revisar `/pedido` a 320 px: el selector y el precio de línea pasan a ocupar todo el ancho bajo la foto, y el texto del botón principal debe caber en una línea.
+
+- Pie en móvil: una sola fila compacta con «Ojú» y «Contacto». El lema (repite el del hero) y la onda solo desde `sm`. No ocultar el pie: en las páginas interiores es el acceso a contacto.
 
 ## Publicación estática y SEO
 - El dominio canónico confirmado es `https://ojugildas.com`; metadatos y sitemap lo comparten desde `data/site.ts`.

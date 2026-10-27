@@ -3,20 +3,18 @@ import { Wave } from "@/components/ui/icons";
 
 export function Footer() {
   return (
-    <footer className="border-t border-olive/20 px-6 py-8 md:px-12">
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 text-xs sm:flex-row">
+    <footer className="border-t border-olive/20 px-6 py-4 sm:py-8 md:px-12">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 text-xs">
         <Link href="/" className="font-display text-xl">
           Ojú
-          <span className="ml-4 font-sans text-xs font-normal">
+          <span className="ml-4 hidden font-sans text-xs font-normal sm:inline">
             Gildas y aceitunas del sur.
           </span>
         </Link>
-        <Wave className="h-4 w-16 text-sea" />
-        <div className="flex items-center gap-5">
-          <Link href="/#contacto" className="py-2 hover:underline">
-            Contacto
-          </Link>
-        </div>
+        <Wave className="hidden h-4 w-16 text-sea sm:block" />
+        <Link href="/#contacto" className="py-3 hover:underline">
+          Contacto
+        </Link>
       </div>
     </footer>
   );

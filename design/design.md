@@ -163,3 +163,8 @@ Sustituye a la página Reserva y al formulario de recogida, que se eliminan (sin
 - Tu pedido: titular «Tu pedido» con «pedido» en azul. Líneas con foto, nombre, ingredientes y alérgenos (deben verse antes de pedir), selector y precio de la línea, sin separadores. Al quitar una gilda, «Has quitado X. Deshacer», que se desvanece y se pliega a los 5 s (se mantiene mientras el ratón está encima o el teclado está en «Deshacer»). A la derecha en escritorio (debajo en móvil): total grande, «N gildas a 1,50 € · IVA incluido», nota opcional («Para cuándo lo quieres, alergias, si es para una celebración…») y el único botón relleno, «Pedir por WhatsApp», con una línea que explica qué ocurrirá. Tras pulsarlo, se ofrece «Vaciar el pedido».
 - Vacío: texto breve, «Ver la carta» y, como alternativa, «Escríbenos al 616 232 057».
 - Mensaje de WhatsApp: saludo a Ojú, una línea por gilda («• 2 × La Bandolera»), total de gildas y precio, y la nota si la hay.
+
+## Pie compacto · octubre 2026
+
+- En móvil el pie es una sola fila (~73 px): «Ojú» a la izquierda y «Contacto» a la derecha. El lema «Gildas y aceitunas del sur.» (ya presente en el hero) y la onda aparecen solo desde `sm`; en escritorio no cambia.
+- Descartado ocultarlo o eliminarlo: cierra la página y es el acceso a contacto desde Carta, Conócenos y Pedido. Tampoco se añaden enlaces legales ni datos sin confirmar.
